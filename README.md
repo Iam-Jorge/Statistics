@@ -12,4 +12,4 @@
 *  Tema 5: Procedimientos de Inferencia.
   * 5.1 Muestreo y Estimación.
   * 5.2 Contraste de Hipótesis
-  *  5.3 Introducción al Análisis de Varianza
+  * 5.3 Introducción al Análisis de Varianza
