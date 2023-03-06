@@ -1,11 +1,6 @@
 <h1>TEMARIO</h1>
 
 
-
-- Introduction to React
-- JavaScript
-- Component State, event handlers
-- A more complex state, debugging React apps
 * Tema 1: Introducción a la Estadística.
 * Tema 2: Estadística Descriptiva.
   * 2.1 Estadística Descriptiva Unidimensional.
