@@ -5,7 +5,6 @@ output: html_notebook
 
 ## Ejercicios de estadística
 
-
 1) Obtener summary con los principales valores de la estadística descriptiva de todas las asignaturas contenidas en el dataset.
 ```{r}
 load("dataset.RData")
@@ -158,7 +157,8 @@ boxplot(vars)
 
 18) Realiza un diagrama de cajas de todas las asignaturas.
 ```{r}
-
+vars=data.frame(corData[1,],corData[2,],corData[3,],corData[4,])
+boxplot(vars)
 ```
 
 
@@ -374,5 +374,3 @@ reg1<-lm(model1) #ajustar el modelo
 summary(reg1)
 # Respuesta 0.001158 --> R-suared bonda de ajuste
 ```
-
-
