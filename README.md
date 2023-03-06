@@ -9,9 +9,7 @@
 * Tema 4: Variables Aleatorias y Distribuciones de Probabilidad.
   * 4.1 Variables Aleatorias
   * 4.2 Distribuciones de Probabilidad
-*  Tema 5: Procedimientos de Inferencia.
-  * 4.1 Variables Aleatorias
-  * 4.2 Distribuciones de Probabilidad
+* Tema 5: Procedimientos de Inferencia.
   * 5.1 Muestreo y Estimación.
   * 5.2 Contraste de Hipótesis
   * 5.3 Introducción al Análisis de Varianza
