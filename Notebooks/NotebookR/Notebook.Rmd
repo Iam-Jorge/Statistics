@@ -1,0 +1,390 @@
+---
+title: "Notebook Estadística"
+output: html_notebook
+---
+# Indice
+
+1. [Introduccion a R](#section-1)
+    a. [Sintaxis basica](#section-1-1)
+    b. [Tipos de objetos](#section-1-2)
+    c. [Cadenas](#section-1-3)
+    d. [Vectores](#section-1-4)
+    e. [Introducir valores por teclado](#section-1-5)
+    f. [Listas](#section-1-6)
+    g. [Matrices](#section-1-7)
+    h. [Arrays](#section-1-8)
+    i. [Data Frames](#section-1-9)
+    j. [Operadores (Aritmeticos, relacionales y logicos)](#section-1-10)
+2. [Estructuras de control](#section-2)
+    a. [Estructuras condicionales](#section-2-1)
+    b. [Estructuras secuenciales](#section-2-2)
+    c. [Funciones](#section-2-3)
+3. [Interfaces de datos](#section-3)
+    a. [Archivos CSV](#section-3-1)
+    b. [Archivos Rdata](#section-3-2)
+    c. [Archivos txt](#section-3-3)
+
+
+# Introduccion a R {#section-1}
+RStudio es un entorno de desarrollo integrado (IDE) para el lenguaje de programación R, 
+y nos permite obtener documentación sobre los comandos.
+```{r}
+?plot #ayuda general
+??plot #ayuda concreta
+help(plot)
+```
+Podemos limpiar el workspace y terminal con los siguientes comandos:
+```{r}
+rm(list = ls())
+cat("\014") # Equivale a Ctrl + L
+```
+
+## Sintaxis basica {#section-1-1}
+Para definir variable
+```{r}
+myString = "Hola mundo!"
+myString <- "Hola mundo!"
+```
+Para visualizar el valor de una variable
+```{r}
+print(myString)
+```
+Para ver todas las variables disponibles
+```{r}
+print(ls())
+print(ls(all.name = TRUE))
+```
+Para eliminar variables
+```{r}
+rm(myString)
+```
+
+## Tipos de objetos {#section-1-2}
+* Logicos
+    + v <- TRUE
+* Numericos
+    + v <- 23.5
+* Enteros
+    + v <- 2L
+* Complejos
+    + v <- 2+5i
+* Caracteres
+    + v <- "TRUE"
+* Raw o hexadecimal
+    + v <- charToRaw("Hello")
+También podemos ver de que tipo es una variable
+```{r}
+v <- 2+5i
+class(v)
+```
+## Cadenas {#section-1-3}
+Con cat tambien podemos visualizar variables, pero a su vez podemos concatenar cadenas u otras variables 
+```{r}
+myString <- "Hola mundo!"
+cat("Numero de caracteres", nchar(myString))
+```
+Convertir a mayusculas o minususculas
+```{r}
+print(toupper(myString))
+print(tolower(myString))
+```
+Extraer subcadenas
+```{r}
+result <- substring("Extract", 5, 7)
+print(result)
+```
+#### Formatear cadenas
+```{r}
+# Redondear
+result <- format(23.123456789, digits = 4)
+print(result)
+```
+```{r}
+# Numero minimo de decimles
+result <- format(23.47, nsmall = 5)
+print(result)
+```
+```{r}
+# Espacios en blanco a la izquierda
+result <- format(13.7, width = 6)
+print(result)
+```
+
+```{r}
+# Justificacion (l-left) (c-center)
+result <- format("Hello", width = 8, justify = "c")
+print(result)
+```
+
+## Vectores {#section-1-4}
+La funcion c() combina los elementos que indicamos en un vector, fuerza que todos los elemenos sean de tipo caracter
+```{r}
+# Definicion de los vectores
+apple <- c('red','green','yellow')
+colors <- c('red','green','orange')
+print(apple)
+```
+```{r}
+incid <-c (123,89,142,118,109) #vector con 5 elementos
+names(incid) <- c(1:5) # Enumeramos la posiciones del vector
+names(incid) <- seq(1,5) # De forma secuencial
+names(incid) <-c ("Mon","Tue","Wed","Thu","Fri") # También se puede hacer con literales
+incid
+incid>110 # Comprobar si existen valores mayores a 110 (true o false)
+sum(incid>110) # Numero de mayores que 110
+sum(incid[incid>110]) # Sumatorio de los mayores que 110
+```
+```{r}
+# Acceder a una de las posiciones
+t <- c("Sun","Mon","Tue","Wed","Thurs","Fri","Sat")
+u <- t[c(2,3,6)]
+print(u)
+u[1]
+u[-1]
+```
+```{r}
+# Para ver el tipo de objetos contiene un vectore
+print(class(apple))
+```
+```{r}
+# Comprobar si un elemento pertecene al vector
+color <- 'orange'
+print(color %in% apple)
+print(color %in% colors)
+```
+```{r}
+# Crear una secuencia de nuemeros o letras
+vector <- 1:10
+vector <- LETTERS[1:5]
+print(vector)
+```
+```{r}
+# Ordenar vectores
+v <- c(3,8,4,5,0,11, -9, 304)
+sort.result <- sort(v)
+print(sort.result)
+```
+```{r}
+# Para ordenar de forma descendiente
+revsort.result <- sort(v, decreasing = TRUE)
+print(revsort.result)
+```
+
+## Introducir valores por teclado {#section-1-5}
+Con la orden scan podemos introducir valores por teclado, pulsar dos veces para finalizar.
+```{r}
+incid2<-scan()
+names(incid2)<-names(incid)
+incidT<-c(incid,incid2)
+incidT
+```
+
+## Listas {#section-1-6}
+```{r}
+# Para definir una lista
+list <- list(c(2,5,3),21,3,sin)
+print(list)
+```
+```{r}
+# Acceder a las posiciones
+print(list[2])
+```
+```{r}
+# Añadir al final de la lista
+list[5] <- "New element"
+print(list)
+```
+```{r}
+# Combinar listas
+list1 <- list(1,2,3)
+list2 <- list("Sun","Mon","Tue")
+merged.list <- c(list1,list2)
+print(merged.list)
+```
+```{r}
+# Convertir una lista a vector
+v1 <- unlist(list)
+print(v1)
+```
+## Matrices {#section-1-7}
+```{r}
+M = matrix( c('a','a','b','c','b','a'), nrow = 2, ncol = 3, byrow = TRUE)
+print(M)
+# Acceder el elemento en la secundo columna de la primera fila
+print(M[1,3])
+```
+```{r}
+# Acceder una fila
+print(M[2,])
+```
+```{r}
+# Acceder una columna
+print(M[,3])
+```
+
+## Arrays {#section-1-8}
+
+## Data frames {#section-1-9}
+```{r}
+# Podemos tener diferente tipos de datos para cada columna
+BMI <- 	data.frame(
+  gender = c("Male", "Male","Female"), 
+  height = c(152, 171.5, 165), 
+  weight = c(81,93, 78),
+  Age = c(42,38,26)
+)
+print(BMI)
+```
+```{r}
+# Extraer columnas
+result <- data.frame(BMI$height)
+print(result)
+```
+## Operadores (Aritmeticos, relacionales y logicos {#section-1-10}
+Operadores aritmeticos
+```{r}
+# Para vectores de mismo tamaño, si realizamos una operacion con
+# vectores de distinto tamaño, los elementos del vector mas pequeño son reciclados (duplicados)
+v <- c(2,5.5,6)
+t <- c(8, 3, 4)
+print(v+t)
+print(v-t)
+print(v*t)
+print(v/t)
+print(v%%t)
+print(v^t)
+```
+Operadores relacionales
+```{r}
+v <- c(2,5.5,6,9)
+t <- c(8,2.5,14,9)
+print(v>t)
+print(v>=t)
+print(v==t)
+print(v!=t)
+```
+Operadores logicos
+```{r}
+v <- c(3,1,TRUE,2+3i)
+t <- c(4,1,FALSE,2+3i)
+# TRUE si los elementos de ambos vectores son true
+print(v&t)
+```
+
+
+# Estructuras de control {#section-2}
+## Estructuras condicionales {#section-2-1}
+```{r}
+# IF
+x <- 30L
+if(is.integer(x)) {
+  print("X es un entero")
+} else {
+  print("X no es un entero")
+}
+```
+```{r}
+# Switch
+x <- switch(
+  3,
+  "first",
+  "second",
+  "third",
+  "fourth"
+)
+print(x)
+```
+## Estructuras repetitivas{#section-2-2}
+```{r}
+# Repeat
+v <- c("Hello","loop")
+cnt <- 2
+
+repeat {
+  print(v)
+  cnt <- cnt+1
+  
+  if(cnt > 5) {
+    break
+  }
+}
+```
+```{r}
+# Bucle while
+v <- c("Hello","while loop")
+cnt <- 2
+
+while (cnt < 7) {
+  print(v)
+  cnt = cnt + 1
+}
+```
+```{r}
+# Bucle for
+v <- LETTERS[1:4]
+for ( i in v) {
+  print(i)
+}
+```
+## Funciones {#section-2-3}
+```{r}
+# Definir funcion que muestra las raices de una secuencia
+myFunction <- function(a) {
+  for(i in 1:a) {
+    b <- i^2
+    print(b)
+  }
+}
+```
+```{r}
+# Llamada a funcion
+myFunction(6)
+```
+
+# Interfaces de datos {#section-3}
+En R podemos leer y guardar datos en distinto formatos de archivo.
+
+Lo primero que vamos a hacer es identificar el directorio de trabajo:
+
+> print(getwd())
+
+Podemos cambiar el directorio de trabajo
+
+> setwd("/C/something/R")
+
+## Archivos CSV {#section-3-1}
+Utilizaremos la funcion read.csv() que nos devuelve los datos en formato Data frame.
+
+```{r}
+data <- read.csv("Datos.csv")
+print(data)
+```
+
+Analizando el archivo CSV
+```{r}
+# Podemos ver cuantas columnas y filas tiene
+print(ncol(data))
+print(nrow(data))
+# Obtener la persona con mayor salario.
+retval <- subset(data, salary == max(salary))
+print(retval)
+```
+Para escribir a un archivo CSV
+> write.csv()
+
+
+## Archivos Rdata {#section-3-2}
+```{r}
+load(Datos.Rdata) # Para cargar un archivo Rdata
+save(incid, file="incid.Rdata") # Para guardar datos
+```
+
+## Archivos txt {#section-3-2}
+```{r}
+# Para cargar archivos de texto lo aremos con la funcion scan
+espera<-scan(file = "espera.txt")
+# Obtenemos información sobre los datos que hemos cargado
+# Muestra el valor mas pequeño, grande, mediana, media, 1 y 3 cuartil
+summary(espera)
+```
+

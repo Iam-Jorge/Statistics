@@ -1,0 +1,378 @@
+---
+title: "Notebook ejercicios"
+output: html_notebook
+---
+
+## Ejercicios de estadística
+
+
+1) Obtener summary con los principales valores de la estadística descriptiva de todas las asignaturas contenidas en el dataset.
+```{r}
+load("dataset.RData")
+summary(dataset)
+```
+
+
+2) Obtener summary con los principales valores de la estadística descriptiva de la primera asignatura.
+```{r}
+summary(dataset)[,1]
+```
+
+
+3) ¿Cuál es la asignatura con mayor nota media?
+```{r}
+all_mean=NULL
+for(i in 1:ncol(dataset)){ #Se recorren las columnas
+  aux=dataset[,i]
+  all_mean=c(all_mean,mean(aux)) #Se calculan las medias
+}
+
+which(max(all_mean)==all_mean)
+```
+
+
+4) Realizar un histograma completo del dataset.
+```{r}
+hist(dataset)
+```
+
+
+5) ¿Hay algún outliers en alguna asignatura? Piensa que podría causar.
+```{r}
+box_var=boxplot(dataset)
+box_var$out
+```
+
+
+6) ¿Cuántas asignaturas tienen más del 40% de estudiantes con una nota mayor que 8?
+
+```{r}
+for(i in 1: ncol(dataset)){
+  aux=dataset[,i]
+  if(quantile(aux,0.6)>8){
+    print(i)
+  }
+}
+```
+
+
+7) Comparando la séptima y la novena asignatura: ¿Cual de ellas es más similar a una distribución normal? 
+# ¿Como son llamadas dependiendo del valor del parámetro utilizado?
+```{r}
+print(fBasics::kurtosis(dataset[,7])) #Leptokurtic
+print(fBasics::kurtosis(dataset[,9])) #Platykurtic
+```
+
+
+8) Comparando la quinta, octava y décima asignatura: ¿Cual de ellas podemos considerar más simétrica? ¿Qué podemos decir de las otras asignaturas?
+```{r}
+print(fBasics::skewness(dataset[,5])) #Simetrica
+print(fBasics::skewness(dataset[,8])) #Una poca asimetria negativa
+print(fBasics::skewness(dataset[,10])) #Una pequeña asimetria positiva
+```
+
+
+9) ¿Qué percentil representa una nota de 8 para la primera asignatura?
+```{r}
+#Nos pregunta la k. Hay dos soluciones
+sum(dataset[,1]<=8)/length(dataset[,1])
+
+# Segunda solucion
+aux=dataset[,1] #SOLUCION 
+per=0;
+while (round(quantile(aux,per),3)!=8){
+  per=per+0.001;
+}
+per
+```
+
+
+10) ¿En qué asignatura tiene más mérito obtener un 9?
+```{r}
+tip=NULL
+nota = 9
+for(i in 1:ncol(dataset)){
+  aux=dataset[,i]
+  tip=c(tip,(nota-mean(aux))/sd(aux))
+}
+which(max(tip)==tip)
+```
+
+
+11) Guardar en un objeto las opiniones de los maridos y las mujeres y mostrar la table con valores marginales y sumatorio.
+```{r}
+datos <- load("Session4.Rdata")
+Hombres <- SexualFun$Husband
+Mujeres <- SexualFun$Wife
+tab.opinion <- table(Hombres, Mujeres)
+tab.opinion
+margin.table(tab.opinion,1)
+margin.table(tab.opinion,2)
+addmargins(tab.opinion)
+```
+
+
+12) Realizar con leyenda los diagramas de barras
+```{r}
+barplot(tab.opinion)
+barplot(t(tab.opinion))
+barplot(t(tab.opinion), beside=TRUE, legend=TRUE)
+```
+
+
+13) Analizando los diagramas, ¿Cuál es lo opinión más compartida por hombre y mujeres ? ¿Y la menos compartida?
+```{r}
+barplot(t(tab.opinion), legend=TRUE)
+print.noquote('Opinion mas compartida: always.fun')
+print.noquote('Opinion menos compartida: never.fun')
+```
+
+
+14) Obtener las frencuencias relativas.
+```{r}
+table(Hombres,Mujeres)/length(Hombres)
+```
+
+
+15) Repetir diagramas de barras con commando beside=TRUE para separar variables en varias columnas.
+```{r}
+barplot(tab.opinion, legend=TRUE, beside=TRUE)
+barplot(t(tab.opinion), legend=TRUE, beside=TRUE)
+```
+
+
+16) Realiza un histograma con las notas de los 100 alumnos en la asignatura primera (cordata).
+```{r}
+notas <- print(corData[1:100])
+boxplot(notas)
+hist(corData[1,1:100])
+```
+
+
+17) Realiza un diagrama de cajas comparando las dos primeras asignaturas.
+```{r}
+vars=data.frame(corData[1,],corData[2,])
+boxplot(vars)
+```
+
+
+18) Realiza un diagrama de cajas de todas las asignaturas.
+```{r}
+
+```
+
+
+19) ¿Hay algún outliers en alguna asignatura?
+```{r}
+corData[1,1]=30 # para que tengamos algun outlier
+for (i in 1:row(corData)) { # column loop
+  aux = corData[i,] # aux variable for column
+  box_var=boxplot(aux) # calculate all means
+  if(length(box_var$out)>0) {
+      print(i)
+      print(box_var$out)
+    }
+}
+
+# Otra solucion
+n_outliers = 0
+for (i in 1:nrow(corData)){
+  aux = corData[i,]
+  box = boxplot(aux)
+  if (length(box$out)>0){
+    print(i)
+    n_outliers + 1
+  }
+}
+```
+
+
+20) Realiza un plot para comparar las asignaturas 3 y 4.
+```{r}
+plot(corData[3, ],corData[4,])
+```
+
+
+21) Crea un objeto y realiza una matriz con la relación de todas las variables.
+```{r}
+pairs(vars)
+# Otra solucion
+variables <- data.frame(corData[1,], corData[2,], corData[3,], corData[4,])
+pairs(variables)
+```
+
+
+22) ¿Qué percentil representa una nota de 8 para la primera asignatura?
+```{r}
+nota = 8
+sum(corData[1,]<= nota /length(corData[1,]))
+```
+
+
+23) Calcula el coeficiente de correlación de Pearson entre todas  las asignaturas y analiza los resultados obtenidos.
+```{r}
+cor(vars, use = "pairwise.complete.obs")
+# Hay relacion muy buena entre 2 y 4
+```
+
+
+24) Elige las asignaturas con mayor relación lineal y realiza un Modelo de Regresión Lineal.
+```{r}
+Asignatura2 <- corData[2,]
+Asignatura4 <- corData[4,]
+modelo1 <- Asignatura2 ~ Asignatura4
+```
+
+
+25) Ajusta el Modelo de Regresión Lineal e indica la bondad obtenida por dicho modelo.
+```{r}
+regresion1 <- lm(modelo1)
+summary(regresion1)
+# R-Squared es casi 1 (0,9904) -> bondad de ajuste buena
+```
+
+
+26) Realiza predicciones de una de las asignaturas en función de la nota obtenida en la otra y razona tus resultados obtenidos. Realiza un gráfico que muestre varias predicciones en color rojo en el Modelo de Regresión Lineal realizado.
+```{r}
+plot(model1);abline(regl)
+pred<-predict(regl,data.frame(Asignatura4<-c(10,7,8)))
+print(pred)
+points(cbind(Asignatura4,pred),col="red")
+# X = Asignatura 4, valores que queremos predecir
+```
+
+
+27) 12 ¿En cuál de las 4 asignaturas tiene más valor sacar un 9?
+```{r}
+tip = NULL
+nota = 9
+for (i in 1:nrow(corData)) { # recorrer columnas
+  aux=corData[i,] # guardar la columna
+  tip=c(tip,(nota-median(aux))/sd(aux)) # añadimos la tip al vector
+}
+print.noquote("Tiene mas merito sacar un 9 en la asignatura:");print(which(max(tip)==tip))
+```
+
+
+28) Considerando la variable corData, ¿qué podemos indicar con respecto a la forma de la variable de la Fila 2 atendiendo al estadístico correspondiente? Nota: considerar para la respuesta que el intervalo central del estadístico viene definido por [-0.1,0.1]
+```{r}
+load("Variables2.Rdata")
+print(fBasics::kurtosis(corData[2,]))
+# -1.246355 --> platicurtica < 0
+```
+
+
+29) Considerando la variable corData, ¿entre que dos filas encontraríamos la mayor correlación inversa?
+```{r}
+cat("Correlacion Var4 y Var1 =", cor(corData[4,],corData[1,]))
+cat("Correlacion Var2 y Var1 =", cor(corData[2,],corData[1,]))
+cat("Correlacion Var1 y Var1 =", cor(corData[1,],corData[1,]))
+cat("Correlacion Var4 y Var2 =", cor(corData[1,],corData[2,]))
+# Mayor correlacion inversa buscamos la que tenga mayor valor neagtivo, seria 4 y 1 con -0.006498883
+```
+
+
+30) Considerando la variable corData, ¿cuál es el valor de los coeficientes del modelo de regresión lineal de la variable de la fila 3 sobre la variable de la fila 4 si consideramos la recta como y'=a+bx?
+```{r}
+a<-corData[3, ];b<-corData[4, ]
+model1<-a~b #defición del modelo
+reg1<-lm(model1) #ajustar el modelo
+summary(reg1)
+# En el apartado coefficients: Estimate 4.82435 y 0.05581
+```
+
+
+31) Considerando la variable corData, ¿cual sería el valor y' que predeciría el modelo de regresión lineal de la variable de la fila 1 sobre la variable de la fila 2 para x=4?
+```{r}
+a<-corData[1, ];b<-corData[2, ]
+model1<-a~b #defición del modelo
+reg1<-lm(model1) #ajustar el modelo
+summary(reg1)
+# La regresion lineal se represena Y' = a + b * X
+# para calcular x = 4 simplemente sustituimos los valores
+# a = 0.136245   b = -0.003241   x = 4  --> 0.136245 + (-0.003241) * 4 = 0.12384 = 0.1233
+```
+
+
+32) Considerando la variable corData, ¿cuál es el valor de de significación de la pendiente (b) del modelo de regresión lineal de la variable de la fila 2 sobre la variable de la fila 3?
+```{r}
+a<-corData[2, ];b<-corData[3, ]
+model1<-a~b #defición del modelo
+reg1<-lm(model1) #ajustar el modelo
+summary(reg1)
+# Valor de la significacion = p-value = 0.2365
+```
+
+
+33) Considerando la variable corData, ¿qué podemos indicar con respecto a la forma de la variable de la Fila 4 atendiendo al estadístico correspondiente? Nota: considerar para la respuesta que el intervalo central del estadístico viene definido por [-0.1,0.1]
+```{r}
+sum((corData[4,]-mean(corData[4,]))^3)/(length(corData[4,])*sd(corData[4,])^3)
+fBasics::skewness(corData[4,])
+# coeficiente > 0 correlacion positiva = asimetria positiva
+# coeficiente = 0 ausencia de correlacion = simetrica
+# coeficiente < 0 correlacion negativa = asimetria negativa
+# 0.1343615 --> Asimetrica positiva
+```
+
+
+34) Las variables TempAlb y TempCR contienen la temperatura medida en diferentes puntos de las provincias de Albacete y Ciudad Real en un día determinado ¿Cuál de las dos provincias tiene más de un 45 por ciento de zonas con medidas de temperatura mayores a la media de temperatura de la provincia?
+```{r}
+print(TempAlb)
+print(TempCR)
+# aux =  porciento
+mediaCR <- mean(TempCR)
+mediaAlb <- mean(TempAlb)
+
+mayoresCR <- 0
+for(i in 1:length(TempCR)){
+  aux=TempCR[i]
+  if(quantile(aux,0.45)>mediaCR){
+    mayoresCR = mayoresCR + 1
+  }
+}
+print(mayoresCR)
+
+mayoresAlb <-0
+for(i in 1:length(TempAlb)){
+  aux=TempAlb[i]
+  if(quantile(aux,0.45)>mediaAlb){
+    mayoresAlb = mayoresAlb + 1
+  }
+}
+print(mayoresAlb)
+# Ciudad Real
+```
+
+
+35) Las variables TempAlb y TempCR contienen la temperatura medida en diferentes puntos de las provincias de Albacete y Ciudad Real en un día determinado ¿Cuál de las dos provincias tiene de un mayor número de zonas con medidas de temperatura que se puean considerar atípicas con respecto al resto de la provincia?
+```{r}
+boxplot(TempAlb)$stats
+boxplot(TempCR)$stats
+
+outliersAlb=boxplot(TempAlb) # Valores extremos o atipicos (outlier)
+outliersCR=boxplot(TempCR)
+
+outliersAlb$out # Valor numerico de los outliers si los hay
+outliersCR$out
+# Ambas tienen alguna zona con valores atipicos y son igual numero
+```
+
+
+36) Las variables valoracion1 y valoracion2 contienen la valoración otorgada por una misma persona a dos periódicos diferentes. ¿Cuál sería la proporción de personas, de las que han puntuado con un 4 al periodico asociado a la valoracion2, han puntuado con un 4 al periódico asociado a valoracion1?
+```{r}
+proporcion <- tapply(valoracion1,valoracion2,mean)
+print(proporcion)
+# Respuesta 0.3571
+```
+
+
+37) Considerando la variable corData, ¿cuál es la bondad de ajuste del modelo de regresión lineal de la variable de la fila 3 sobre la variable de la fila 1?
+```{r}
+a<-corData[3, ];b<-corData[1, ]
+model1<-a~b #defición del modelo
+reg1<-lm(model1) #ajustar el modelo
+summary(reg1)
+# Respuesta 0.001158 --> R-suared bonda de ajuste
+```
+
+
