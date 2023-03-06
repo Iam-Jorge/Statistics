@@ -162,6 +162,7 @@ boxplot(vars)
 ```
 
 
+
 19) ¿Hay algún outliers en alguna asignatura?
 ```{r}
 corData[1,1]=30 # para que tengamos algun outlier
@@ -360,7 +361,7 @@ outliersCR$out
 
 36) Las variables valoracion1 y valoracion2 contienen la valoración otorgada por una misma persona a dos periódicos diferentes. ¿Cuál sería la proporción de personas, de las que han puntuado con un 4 al periodico asociado a la valoracion2, han puntuado con un 4 al periódico asociado a valoracion1?
 ```{r}
-proporcion <- tapply(valoracion1,valoracion2,mean)
+proporcion1 <- tapply(valoracion1,valoracion2,mean)
 print(proporcion)
 # Respuesta 0.3571
 ```
