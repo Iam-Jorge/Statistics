@@ -1,6 +1,5 @@
 <h1>TEMARIO</h1>
 
-
 * Tema 1: Introducción a la Estadística.
 * Tema 2: Estadística Descriptiva.
   * 2.1 Estadística Descriptiva Unidimensional.
