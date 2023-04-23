@@ -1,0 +1,62 @@
+---
+title: "Notebook Estadística 2"
+output: html_notebook
+---
+# Indice
+1. [Distribuciones de Probabilidad](#section-1)
+    a. [Variables Aleatorieas](#section-1-1)
+    b. [Funciones de probabilidad y de distribución](#section-1-2)
+    c. [Momentos de una variable aleatoria](#section-1-3)
+    d. [Diagrama de sectores (Pie chart)](#section-1-4)
+    e. [Diagramas de dispersion (Scatterplots)](#section-1-5)
+    f. [Boxplot](#section-1-6)
+2. [Estadística](#section-2)
+    a. [Conceptos básicos](#section-2-1)
+    b. [Tablas de frecuencia](#section-2-2)
+    c. [Medidas de centralizacion](#section-2-3)
+    d. [Medidas de variacion](#section-2-4)
+    e. [Correlacion](#section-2-5)
+    e. [Regresgion lineal](#section-2-6)
+
+
+# Distribuciones de Probabilidad {#section-1}
+## Variables Aleatorieas {#section-1-1}
+Definición formal de variable aleatoria X:E -> R
+Una variable aleatoria es una función e -> X(e) que, a cada suceso elemental "e" del espacio muestral "E" le atribuye un único número real.
+
+-**Experimento**: Proceso de obtener un dato dadas unas condiciones de experimentación. La obtención de un nuevo dato, con las mismas condiciones, es una repetición del experimento.
+
+-**Experimento aleatorio**: Experimento que al repetirlo no siempre se obtiene el mismo valor.
+
+Ejemplo: Medir el tiempo que una maquina tarda en hacer la misma tarea, observar el valor de lanzar un dado.
+
+-**Variable aleatoria**: Es el resultado de un experimento aleatorio.
+
+Clasificación de las variables aleatorias:
+
+* Discretas: Aquellas que solo pueden tomar un número finito o infinito de calores.
+* Continuas: Pueden tomar un número infinito no numerable de valores.
+
+Ejemplo: Experimento - Medir el tiempo de acceso de un ordenador a una red.
+Variable aleatoria - Tiempo de acceso (Variable continua)
+
+-**Valores observados**: A los valores observados se les denomina realizaciones de la variable aleatoria.
+
+## Funciones de probabilidad y de distribución {#section-1-2}
+
+* **Función de masa de probabilidad**
+Es una función que asigna a cada posible valor de una variable **aleatoria discreta** su probabilidad.
+
+* **Función de distribución para variables aleatorias discretas**
+Es la función que asocia a cada valor de una variable, la probabilidad acumulada de los valores inferiores o iguales.
+
+* **Función de densidad de probabilidad**
+La función f(x), definidad en los números reales, es una función de densidad para una variable aleatoria continua "X", si verifica:
+f(x) => 0 para toda x € R
+
+
+# Momentos de una variable aleatoria {#section-1-3}
+
+
+
+## Diagrama de barras (Bar chart) {#section-1-2}

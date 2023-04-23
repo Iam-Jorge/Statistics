@@ -16,7 +16,7 @@ output: html_notebook
     c. [Medidas de centralizacion](#section-2-3)
     d. [Medidas de variacion](#section-2-4)
     e. [Correlacion](#section-2-5)
-    e. [Regresgion lineal](#section-2-6)
+    f. [Regresgion lineal](#section-2-6)
 
 
 # Represenacion grafica {#section-1}
@@ -388,7 +388,7 @@ Interpretacion del coeficiente de correlacion
 
 * coeficiente > 0 relacion positiva (muy fuerte, fuerte, moderada, debil o muy debil)
 * coeficiente = 0 relacion lineal
-* coeficiente < 1 relacion negativa 
+* coeficiente < 0 relacion negativa 
 
 ## Regresion lineal {#section-2-6}
 Nos permite analizar la relacion entre unos valores predictores y los resultados reales

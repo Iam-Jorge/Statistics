@@ -11,7 +11,7 @@
 
 
 
-<title>Notebook ejercicios</title>
+<title>Notebook Estadística 2</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -1746,586 +1746,91 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">Notebook ejercicios</h1>
+<h1 class="title toc-ignore">Notebook Estadística 2</h1>
 
 </div>
 
 
 <!-- rnb-text-begin -->
-<div id="ejercicios-de-estadística" class="section level2">
-<h2>Ejercicios de estadística</h2>
+<div id="indice" class="section level1">
+<h1>Indice</h1>
 <ol style="list-style-type: decimal">
-<li>Obtener summary con los principales valores de la estadística
-descriptiva de todas las asignaturas contenidas en el dataset.</li>
+<li><a href="#section-1">Distribuciones de Probabilidad</a>
+<ol style="list-style-type: lower-alpha">
+<li><a href="#section-1-1">Variables Aleatorieas</a></li>
+<li><a href="#section-1-2">Funciones de probabilidad y de
+distribución</a></li>
+<li><a href="#section-1-3">Momentos de una variable aleatoria</a></li>
+<li><a href="#section-1-4">Diagrama de sectores (Pie chart)</a></li>
+<li><a href="#section-1-5">Diagramas de dispersion
+(Scatterplots)</a></li>
+<li><a href="#section-1-6">Boxplot</a></li>
+</ol></li>
+<li><a href="#section-2">Estadística</a>
+<ol style="list-style-type: lower-alpha">
+<li><a href="#section-2-1">Conceptos básicos</a></li>
+<li><a href="#section-2-2">Tablas de frecuencia</a></li>
+<li><a href="#section-2-3">Medidas de centralizacion</a></li>
+<li><a href="#section-2-4">Medidas de variacion</a></li>
+<li><a href="#section-2-5">Correlacion</a></li>
+<li><a href="#section-2-6">Regresgion lineal</a></li>
+</ol></li>
 </ol>
+</div>
+<div id="section-1" class="section level1">
+<h1>Distribuciones de Probabilidad</h1>
+<div id="section-1-1" class="section level2">
+<h2>Variables Aleatorieas</h2>
+<p>Definición formal de variable aleatoria X:E -&gt; R Una variable
+aleatoria es una función e -&gt; X(e) que, a cada suceso elemental “e”
+del espacio muestral “E” le atribuye un único número real.</p>
+<p>-<strong>Experimento</strong>: Proceso de obtener un dato dadas unas
+condiciones de experimentación. La obtención de un nuevo dato, con las
+mismas condiciones, es una repetición del experimento.</p>
+<p>-<strong>Experimento aleatorio</strong>: Experimento que al repetirlo
+no siempre se obtiene el mismo valor.</p>
+<p>Ejemplo: Medir el tiempo que una maquina tarda en hacer la misma
+tarea, observar el valor de lanzar un dado.</p>
+<p>-<strong>Variable aleatoria</strong>: Es el resultado de un
+experimento aleatorio.</p>
+<p>Clasificación de las variables aleatorias:</p>
+<ul>
+<li>Discretas: Aquellas que solo pueden tomar un número finito o
+infinito de calores.</li>
+<li>Continuas: Pueden tomar un número infinito no numerable de
+valores.</li>
+</ul>
+<p>Ejemplo: Experimento - Medir el tiempo de acceso de un ordenador a
+una red. Variable aleatoria - Tiempo de acceso (Variable continua)</p>
+<p>-<strong>Valores observados</strong>: A los valores observados se les
+denomina realizaciones de la variable aleatoria.</p>
+</div>
+<div id="section-1-2" class="section level2">
+<h2>Funciones de probabilidad y de distribución</h2>
+<ul>
+<li><p><strong>Función de masa de probabilidad</strong> Es una función
+que asigna a cada posible valor de una variable <strong>aleatoria
+discreta</strong> su probabilidad.</p></li>
+<li><p><strong>Función de distribución para variables aleatorias
+discretas</strong> Es la función que asocia a cada valor de una
+variable, la probabilidad acumulada de los valores inferiores o
+iguales.</p></li>
+<li><p><strong>Función de densidad de probabilidad</strong> La función
+f(x), definidad en los números reales, es una función de densidad para
+una variable aleatoria continua “X”, si verifica: f(x) =&gt; 0 para toda
+x € R</p></li>
+</ul>
+</div>
+</div>
+<div id="section-1-3" class="section level1">
+<h1>Momentos de una variable aleatoria</h1>
+<div id="section-1-2" class="section level2">
+<h2>Diagrama de barras (Bar chart)</h2>
 <!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubG9hZChcImRhdGFzZXQuUkRhdGFcIilcbnN1bW1hcnkoZGF0YXNldClcbmBgYCJ9 -->
-<pre class="r"><code>load(&quot;dataset.RData&quot;)
-summary(dataset)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<ol start="2" style="list-style-type: decimal">
-<li>Obtener summary con los principales valores de la estadística
-descriptiva de la primera asignatura.</li>
-</ol>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3VtbWFyeShkYXRhc2V0KVssMV1cbmBgYCJ9 -->
-<pre class="r"><code>summary(dataset)[,1]</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<ol start="3" style="list-style-type: decimal">
-<li>¿Cuál es la asignatura con mayor nota media?</li>
-</ol>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYWxsX21lYW49TlVMTFxuZm9yKGkgaW4gMTpuY29sKGRhdGFzZXQpKXsgI1NlIHJlY29ycmVuIGxhcyBjb2x1bW5hc1xuICBhdXg9ZGF0YXNldFssaV1cbiAgYWxsX21lYW49YyhhbGxfbWVhbixtZWFuKGF1eCkpICNTZSBjYWxjdWxhbiBsYXMgbWVkaWFzXG59XG5cbndoaWNoKG1heChhbGxfbWVhbik9PWFsbF9tZWFuKVxuYGBgIn0= -->
-<pre class="r"><code>all_mean=NULL
-for(i in 1:ncol(dataset)){ #Se recorren las columnas
-  aux=dataset[,i]
-  all_mean=c(all_mean,mean(aux)) #Se calculan las medias
-}
-
-which(max(all_mean)==all_mean)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<ol start="4" style="list-style-type: decimal">
-<li>Realizar un histograma completo del dataset.</li>
-</ol>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaGlzdChkYXRhc2V0KVxuYGBgIn0= -->
-<pre class="r"><code>hist(dataset)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<ol start="5" style="list-style-type: decimal">
-<li>¿Hay algún outliers en alguna asignatura? Piensa que podría
-causar.</li>
-</ol>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYm94X3Zhcj1ib3hwbG90KGRhdGFzZXQpXG5ib3hfdmFyJG91dFxuYGBgIn0= -->
-<pre class="r"><code>box_var=boxplot(dataset)
-box_var$out</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<ol start="6" style="list-style-type: decimal">
-<li>¿Cuántas asignaturas tienen más del 40% de estudiantes con una nota
-mayor que 8?</li>
-</ol>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZm9yKGkgaW4gMTogbmNvbChkYXRhc2V0KSl7XG4gIGF1eD1kYXRhc2V0WyxpXVxuICBpZihxdWFudGlsZShhdXgsMC42KT44KXtcbiAgICBwcmludChpKVxuICB9XG59XG5gYGAifQ== -->
-<pre class="r"><code>for(i in 1: ncol(dataset)){
-  aux=dataset[,i]
-  if(quantile(aux,0.6)&gt;8){
-    print(i)
-  }
-}</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<ol start="7" style="list-style-type: decimal">
-<li>Comparando la séptima y la novena asignatura: ¿Cual de ellas es más
-similar a una distribución normal? # ¿Como son llamadas dependiendo del
-valor del parámetro utilizado?</li>
-</ol>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucHJpbnQoZkJhc2ljczo6a3VydG9zaXMoZGF0YXNldFssN10pKSAjTGVwdG9rdXJ0aWNcbnByaW50KGZCYXNpY3M6Omt1cnRvc2lzKGRhdGFzZXRbLDldKSkgI1BsYXR5a3VydGljXG5gYGAifQ== -->
-<pre class="r"><code>print(fBasics::kurtosis(dataset[,7])) #Leptokurtic
-print(fBasics::kurtosis(dataset[,9])) #Platykurtic</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<ol start="8" style="list-style-type: decimal">
-<li>Comparando la quinta, octava y décima asignatura: ¿Cual de ellas
-podemos considerar más simétrica? ¿Qué podemos decir de las otras
-asignaturas?</li>
-</ol>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucHJpbnQoZkJhc2ljczo6c2tld25lc3MoZGF0YXNldFssNV0pKSAjU2ltZXRyaWNhXG5wcmludChmQmFzaWNzOjpza2V3bmVzcyhkYXRhc2V0Wyw4XSkpICNVbmEgcG9jYSBhc2ltZXRyaWEgbmVnYXRpdmFcbnByaW50KGZCYXNpY3M6OnNrZXduZXNzKGRhdGFzZXRbLDEwXSkpICNVbmEgcGVxdWXDsWEgYXNpbWV0cmlhIHBvc2l0aXZhXG5gYGAifQ== -->
-<pre class="r"><code>print(fBasics::skewness(dataset[,5])) #Simetrica
-print(fBasics::skewness(dataset[,8])) #Una poca asimetria negativa
-print(fBasics::skewness(dataset[,10])) #Una pequeña asimetria positiva</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<ol start="9" style="list-style-type: decimal">
-<li>¿Qué percentil representa una nota de 8 para la primera
-asignatura?</li>
-</ol>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI05vcyBwcmVndW50YSBsYSBrLiBIYXkgZG9zIHNvbHVjaW9uZXNcbnN1bShkYXRhc2V0WywxXTw9OCkvbGVuZ3RoKGRhdGFzZXRbLDFdKVxuXG4jIFNlZ3VuZGEgc29sdWNpb25cbmF1eD1kYXRhc2V0WywxXSAjU09MVUNJT04gXG5wZXI9MDtcbndoaWxlIChyb3VuZChxdWFudGlsZShhdXgscGVyKSwzKSE9OCl7XG4gIHBlcj1wZXIrMC4wMDE7XG59XG5wZXJcbmBgYCJ9 -->
-<pre class="r"><code>#Nos pregunta la k. Hay dos soluciones
-sum(dataset[,1]&lt;=8)/length(dataset[,1])
-
-# Segunda solucion
-aux=dataset[,1] #SOLUCION 
-per=0;
-while (round(quantile(aux,per),3)!=8){
-  per=per+0.001;
-}
-per</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<ol start="10" style="list-style-type: decimal">
-<li>¿En qué asignatura tiene más mérito obtener un 9?</li>
-</ol>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudGlwPU5VTExcbm5vdGEgPSA5XG5mb3IoaSBpbiAxOm5jb2woZGF0YXNldCkpe1xuICBhdXg9ZGF0YXNldFssaV1cbiAgdGlwPWModGlwLChub3RhLW1lYW4oYXV4KSkvc2QoYXV4KSlcbn1cbndoaWNoKG1heCh0aXApPT10aXApXG5gYGAifQ== -->
-<pre class="r"><code>tip=NULL
-nota = 9
-for(i in 1:ncol(dataset)){
-  aux=dataset[,i]
-  tip=c(tip,(nota-mean(aux))/sd(aux))
-}
-which(max(tip)==tip)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDFcbiJ9 -->
-<pre><code>[1] 1</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<ol start="11" style="list-style-type: decimal">
-<li>Guardar en un objeto las opiniones de los maridos y las mujeres y
-mostrar la table con valores marginales y sumatorio.</li>
-</ol>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGF0b3MgPC0gbG9hZChcIlNlc3Npb240LlJkYXRhXCIpXG5Ib21icmVzIDwtIFNleHVhbEZ1biRIdXNiYW5kXG5NdWplcmVzIDwtIFNleHVhbEZ1biRXaWZlXG50YWIub3BpbmlvbiA8LSB0YWJsZShIb21icmVzLCBNdWplcmVzKVxudGFiLm9waW5pb25cbm1hcmdpbi50YWJsZSh0YWIub3BpbmlvbiwxKVxubWFyZ2luLnRhYmxlKHRhYi5vcGluaW9uLDIpXG5hZGRtYXJnaW5zKHRhYi5vcGluaW9uKVxuYGBgIn0= -->
-<pre class="r"><code>datos &lt;- load(&quot;Session4.Rdata&quot;)
-Hombres &lt;- SexualFun$Husband
-Mujeres &lt;- SexualFun$Wife
-tab.opinion &lt;- table(Hombres, Mujeres)
-tab.opinion
-margin.table(tab.opinion,1)
-margin.table(tab.opinion,2)
-addmargins(tab.opinion)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<ol start="12" style="list-style-type: decimal">
-<li>Realizar con leyenda los diagramas de barras</li>
-</ol>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYmFycGxvdCh0YWIub3BpbmlvbilcbmJhcnBsb3QodCh0YWIub3BpbmlvbikpXG5iYXJwbG90KHQodGFiLm9waW5pb24pLCBiZXNpZGU9VFJVRSwgbGVnZW5kPVRSVUUpXG5gYGAifQ== -->
-<pre class="r"><code>barplot(tab.opinion)
-barplot(t(tab.opinion))
-barplot(t(tab.opinion), beside=TRUE, legend=TRUE)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<ol start="13" style="list-style-type: decimal">
-<li>Analizando los diagramas, ¿Cuál es lo opinión más compartida por
-hombre y mujeres ? ¿Y la menos compartida?</li>
-</ol>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYmFycGxvdCh0KHRhYi5vcGluaW9uKSwgbGVnZW5kPVRSVUUpXG5wcmludC5ub3F1b3RlKCdPcGluaW9uIG1hcyBjb21wYXJ0aWRhOiBhbHdheXMuZnVuJylcbnByaW50Lm5vcXVvdGUoJ09waW5pb24gbWVub3MgY29tcGFydGlkYTogbmV2ZXIuZnVuJylcbmBgYCJ9 -->
-<pre class="r"><code>barplot(t(tab.opinion), legend=TRUE)
-print.noquote(&#39;Opinion mas compartida: always.fun&#39;)
-print.noquote(&#39;Opinion menos compartida: never.fun&#39;)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<ol start="14" style="list-style-type: decimal">
-<li>Obtener las frencuencias relativas.</li>
-</ol>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudGFibGUoSG9tYnJlcyxNdWplcmVzKS9sZW5ndGgoSG9tYnJlcylcbmBgYCJ9 -->
-<pre class="r"><code>table(Hombres,Mujeres)/length(Hombres)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<ol start="15" style="list-style-type: decimal">
-<li>Repetir diagramas de barras con commando beside=TRUE para separar
-variables en varias columnas.</li>
-</ol>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYmFycGxvdCh0YWIub3BpbmlvbiwgbGVnZW5kPVRSVUUsIGJlc2lkZT1UUlVFKVxuYmFycGxvdCh0KHRhYi5vcGluaW9uKSwgbGVnZW5kPVRSVUUsIGJlc2lkZT1UUlVFKVxuYGBgIn0= -->
-<pre class="r"><code>barplot(tab.opinion, legend=TRUE, beside=TRUE)
-barplot(t(tab.opinion), legend=TRUE, beside=TRUE)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<ol start="16" style="list-style-type: decimal">
-<li>Realiza un histograma con las notas de los 100 alumnos en la
-asignatura primera (cordata).</li>
-</ol>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubm90YXMgPC0gcHJpbnQoY29yRGF0YVsxOjEwMF0pXG5ib3hwbG90KG5vdGFzKVxuaGlzdChjb3JEYXRhWzEsMToxMDBdKVxuYGBgIn0= -->
-<pre class="r"><code>notas &lt;- print(corData[1:100])
-boxplot(notas)
-hist(corData[1,1:100])</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<ol start="17" style="list-style-type: decimal">
-<li>Realiza un diagrama de cajas comparando las dos primeras
-asignaturas.</li>
-</ol>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudmFycz1kYXRhLmZyYW1lKGNvckRhdGFbMSxdLGNvckRhdGFbMixdKVxuYm94cGxvdCh2YXJzKVxuYGBgIn0= -->
-<pre class="r"><code>vars=data.frame(corData[1,],corData[2,])
-boxplot(vars)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<ol start="18" style="list-style-type: decimal">
-<li>Realiza un diagrama de cajas de todas las asignaturas.</li>
-</ol>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudmFycz1kYXRhLmZyYW1lKGNvckRhdGFbMSxdLGNvckRhdGFbMixdLGNvckRhdGFbMyxdLGNvckRhdGFbNCxdKVxuYm94cGxvdCh2YXJzKVxuYGBgIn0= -->
-<pre class="r"><code>vars=data.frame(corData[1,],corData[2,],corData[3,],corData[4,])
-boxplot(vars)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<ol start="19" style="list-style-type: decimal">
-<li>¿Hay algún outliers en alguna asignatura?</li>
-</ol>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY29yRGF0YVsxLDFdPTMwICMgcGFyYSBxdWUgdGVuZ2Ftb3MgYWxndW4gb3V0bGllclxuZm9yIChpIGluIDE6cm93KGNvckRhdGEpKSB7ICMgY29sdW1uIGxvb3BcbiAgYXV4ID0gY29yRGF0YVtpLF0gIyBhdXggdmFyaWFibGUgZm9yIGNvbHVtblxuICBib3hfdmFyPWJveHBsb3QoYXV4KSAjIGNhbGN1bGF0ZSBhbGwgbWVhbnNcbiAgaWYobGVuZ3RoKGJveF92YXIkb3V0KT4wKSB7XG4gICAgICBwcmludChpKVxuICAgICAgcHJpbnQoYm94X3ZhciRvdXQpXG4gICAgfVxufVxuXG4jIE90cmEgc29sdWNpb25cbm5fb3V0bGllcnMgPSAwXG5mb3IgKGkgaW4gMTpucm93KGNvckRhdGEpKXtcbiAgYXV4ID0gY29yRGF0YVtpLF1cbiAgYm94ID0gYm94cGxvdChhdXgpXG4gIGlmIChsZW5ndGgoYm94JG91dCk+MCl7XG4gICAgcHJpbnQoaSlcbiAgICBuX291dGxpZXJzICsgMVxuICB9XG59XG5gYGAifQ== -->
-<pre class="r"><code>corData[1,1]=30 # para que tengamos algun outlier
-for (i in 1:row(corData)) { # column loop
-  aux = corData[i,] # aux variable for column
-  box_var=boxplot(aux) # calculate all means
-  if(length(box_var$out)&gt;0) {
-      print(i)
-      print(box_var$out)
-    }
-}
-
-# Otra solucion
-n_outliers = 0
-for (i in 1:nrow(corData)){
-  aux = corData[i,]
-  box = boxplot(aux)
-  if (length(box$out)&gt;0){
-    print(i)
-    n_outliers + 1
-  }
-}</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<ol start="20" style="list-style-type: decimal">
-<li>Realiza un plot para comparar las asignaturas 3 y 4.</li>
-</ol>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucGxvdChjb3JEYXRhWzMsIF0sY29yRGF0YVs0LF0pXG5gYGAifQ== -->
-<pre class="r"><code>plot(corData[3, ],corData[4,])</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<ol start="21" style="list-style-type: decimal">
-<li>Crea un objeto y realiza una matriz con la relación de todas las
-variables.</li>
-</ol>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucGFpcnModmFycylcbiMgT3RyYSBzb2x1Y2lvblxudmFyaWFibGVzIDwtIGRhdGEuZnJhbWUoY29yRGF0YVsxLF0sIGNvckRhdGFbMixdLCBjb3JEYXRhWzMsXSwgY29yRGF0YVs0LF0pXG5wYWlycyh2YXJpYWJsZXMpXG5gYGAifQ== -->
-<pre class="r"><code>pairs(vars)
-# Otra solucion
-variables &lt;- data.frame(corData[1,], corData[2,], corData[3,], corData[4,])
-pairs(variables)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<ol start="22" style="list-style-type: decimal">
-<li>¿Qué percentil representa una nota de 8 para la primera
-asignatura?</li>
-</ol>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubm90YSA9IDhcbnN1bShjb3JEYXRhWzEsXTw9IG5vdGEgL2xlbmd0aChjb3JEYXRhWzEsXSkpXG5gYGAifQ== -->
-<pre class="r"><code>nota = 8
-sum(corData[1,]&lt;= nota /length(corData[1,]))</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<ol start="23" style="list-style-type: decimal">
-<li>Calcula el coeficiente de correlación de Pearson entre todas las
-asignaturas y analiza los resultados obtenidos.</li>
-</ol>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY29yKHZhcnMsIHVzZSA9IFwicGFpcndpc2UuY29tcGxldGUub2JzXCIpXG4jIEhheSByZWxhY2lvbiBtdXkgYnVlbmEgZW50cmUgMiB5IDRcbmBgYCJ9 -->
-<pre class="r"><code>cor(vars, use = &quot;pairwise.complete.obs&quot;)
-# Hay relacion muy buena entre 2 y 4</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<ol start="24" style="list-style-type: decimal">
-<li>Elige las asignaturas con mayor relación lineal y realiza un Modelo
-de Regresión Lineal.</li>
-</ol>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuQXNpZ25hdHVyYTIgPC0gY29yRGF0YVsyLF1cbkFzaWduYXR1cmE0IDwtIGNvckRhdGFbNCxdXG5tb2RlbG8xIDwtIEFzaWduYXR1cmEyIH4gQXNpZ25hdHVyYTRcbmBgYCJ9 -->
-<pre class="r"><code>Asignatura2 &lt;- corData[2,]
-Asignatura4 &lt;- corData[4,]
-modelo1 &lt;- Asignatura2 ~ Asignatura4</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<ol start="25" style="list-style-type: decimal">
-<li>Ajusta el Modelo de Regresión Lineal e indica la bondad obtenida por
-dicho modelo.</li>
-</ol>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucmVncmVzaW9uMSA8LSBsbShtb2RlbG8xKVxuc3VtbWFyeShyZWdyZXNpb24xKVxuIyBSLVNxdWFyZWQgZXMgY2FzaSAxICgwLDk5MDQpIC0+IGJvbmRhZCBkZSBhanVzdGUgYnVlbmFcbmBgYCJ9 -->
-<pre class="r"><code>regresion1 &lt;- lm(modelo1)
-summary(regresion1)
-# R-Squared es casi 1 (0,9904) -&gt; bondad de ajuste buena</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<ol start="26" style="list-style-type: decimal">
-<li>Realiza predicciones de una de las asignaturas en función de la nota
-obtenida en la otra y razona tus resultados obtenidos. Realiza un
-gráfico que muestre varias predicciones en color rojo en el Modelo de
-Regresión Lineal realizado.</li>
-</ol>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucGxvdChtb2RlbDEpO2FibGluZShyZWdsKVxucHJlZDwtcHJlZGljdChyZWdsLGRhdGEuZnJhbWUoQXNpZ25hdHVyYTQ8LWMoMTAsNyw4KSkpXG5wcmludChwcmVkKVxucG9pbnRzKGNiaW5kKEFzaWduYXR1cmE0LHByZWQpLGNvbD1cInJlZFwiKVxuIyBYID0gQXNpZ25hdHVyYSA0LCB2YWxvcmVzIHF1ZSBxdWVyZW1vcyBwcmVkZWNpclxuYGBgIn0= -->
-<pre class="r"><code>plot(model1);abline(regl)
-pred&lt;-predict(regl,data.frame(Asignatura4&lt;-c(10,7,8)))
-print(pred)
-points(cbind(Asignatura4,pred),col=&quot;red&quot;)
-# X = Asignatura 4, valores que queremos predecir</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<ol start="27" style="list-style-type: decimal">
-<li>12 ¿En cuál de las 4 asignaturas tiene más valor sacar un 9?</li>
-</ol>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudGlwID0gTlVMTFxubm90YSA9IDlcbmZvciAoaSBpbiAxOm5yb3coY29yRGF0YSkpIHsgIyByZWNvcnJlciBjb2x1bW5hc1xuICBhdXg9Y29yRGF0YVtpLF0gIyBndWFyZGFyIGxhIGNvbHVtbmFcbiAgdGlwPWModGlwLChub3RhLW1lZGlhbihhdXgpKS9zZChhdXgpKSAjIGHDsWFkaW1vcyBsYSB0aXAgYWwgdmVjdG9yXG59XG5wcmludC5ub3F1b3RlKFwiVGllbmUgbWFzIG1lcml0byBzYWNhciB1biA5IGVuIGxhIGFzaWduYXR1cmE6XCIpO3ByaW50KHdoaWNoKG1heCh0aXApPT10aXApKVxuYGBgIn0= -->
-<pre class="r"><code>tip = NULL
-nota = 9
-for (i in 1:nrow(corData)) { # recorrer columnas
-  aux=corData[i,] # guardar la columna
-  tip=c(tip,(nota-median(aux))/sd(aux)) # añadimos la tip al vector
-}
-print.noquote(&quot;Tiene mas merito sacar un 9 en la asignatura:&quot;);print(which(max(tip)==tip))</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<ol start="28" style="list-style-type: decimal">
-<li>Considerando la variable corData, ¿qué podemos indicar con respecto
-a la forma de la variable de la Fila 2 atendiendo al estadístico
-correspondiente? Nota: considerar para la respuesta que el intervalo
-central del estadístico viene definido por [-0.1,0.1]</li>
-</ol>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubG9hZChcIlZhcmlhYmxlczIuUmRhdGFcIilcbnByaW50KGZCYXNpY3M6Omt1cnRvc2lzKGNvckRhdGFbMixdKSlcbiMgLTEuMjQ2MzU1IC0tPiBwbGF0aWN1cnRpY2EgPCAwXG5gYGAifQ== -->
-<pre class="r"><code>load(&quot;Variables2.Rdata&quot;)
-print(fBasics::kurtosis(corData[2,]))
-# -1.246355 --&gt; platicurtica &lt; 0</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<ol start="29" style="list-style-type: decimal">
-<li>Considerando la variable corData, ¿entre que dos filas
-encontraríamos la mayor correlación inversa?</li>
-</ol>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KFwiQ29ycmVsYWNpb24gVmFyNCB5IFZhcjEgPVwiLCBjb3IoY29yRGF0YVs0LF0sY29yRGF0YVsxLF0pKVxuY2F0KFwiQ29ycmVsYWNpb24gVmFyMiB5IFZhcjEgPVwiLCBjb3IoY29yRGF0YVsyLF0sY29yRGF0YVsxLF0pKVxuY2F0KFwiQ29ycmVsYWNpb24gVmFyMSB5IFZhcjEgPVwiLCBjb3IoY29yRGF0YVsxLF0sY29yRGF0YVsxLF0pKVxuY2F0KFwiQ29ycmVsYWNpb24gVmFyNCB5IFZhcjIgPVwiLCBjb3IoY29yRGF0YVsxLF0sY29yRGF0YVsyLF0pKVxuIyBNYXlvciBjb3JyZWxhY2lvbiBpbnZlcnNhIGJ1c2NhbW9zIGxhIHF1ZSB0ZW5nYSBtYXlvciB2YWxvciBuZWFndGl2bywgc2VyaWEgNCB5IDEgY29uIC0wLjAwNjQ5ODg4M1xuYGBgIn0= -->
-<pre class="r"><code>cat(&quot;Correlacion Var4 y Var1 =&quot;, cor(corData[4,],corData[1,]))
-cat(&quot;Correlacion Var2 y Var1 =&quot;, cor(corData[2,],corData[1,]))
-cat(&quot;Correlacion Var1 y Var1 =&quot;, cor(corData[1,],corData[1,]))
-cat(&quot;Correlacion Var4 y Var2 =&quot;, cor(corData[1,],corData[2,]))
-# Mayor correlacion inversa buscamos la que tenga mayor valor neagtivo, seria 4 y 1 con -0.006498883</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<ol start="30" style="list-style-type: decimal">
-<li>Considerando la variable corData, ¿cuál es el valor de los
-coeficientes del modelo de regresión lineal de la variable de la fila 3
-sobre la variable de la fila 4 si consideramos la recta como
-y’=a+bx?</li>
-</ol>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYTwtY29yRGF0YVszLCBdO2I8LWNvckRhdGFbNCwgXVxubW9kZWwxPC1hfmIgI2RlZmljacOzbiBkZWwgbW9kZWxvXG5yZWcxPC1sbShtb2RlbDEpICNhanVzdGFyIGVsIG1vZGVsb1xuc3VtbWFyeShyZWcxKVxuIyBFbiBlbCBhcGFydGFkbyBjb2VmZmljaWVudHM6IEVzdGltYXRlIDQuODI0MzUgeSAwLjA1NTgxXG5gYGAifQ== -->
-<pre class="r"><code>a&lt;-corData[3, ];b&lt;-corData[4, ]
-model1&lt;-a~b #defición del modelo
-reg1&lt;-lm(model1) #ajustar el modelo
-summary(reg1)
-# En el apartado coefficients: Estimate 4.82435 y 0.05581</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<ol start="31" style="list-style-type: decimal">
-<li>Considerando la variable corData, ¿cual sería el valor y’ que
-predeciría el modelo de regresión lineal de la variable de la fila 1
-sobre la variable de la fila 2 para x=4?</li>
-</ol>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYTwtY29yRGF0YVsxLCBdO2I8LWNvckRhdGFbMiwgXVxubW9kZWwxPC1hfmIgI2RlZmljacOzbiBkZWwgbW9kZWxvXG5yZWcxPC1sbShtb2RlbDEpICNhanVzdGFyIGVsIG1vZGVsb1xuc3VtbWFyeShyZWcxKVxuIyBMYSByZWdyZXNpb24gbGluZWFsIHNlIHJlcHJlc2VuYSBZJyA9IGEgKyBiICogWFxuIyBwYXJhIGNhbGN1bGFyIHggPSA0IHNpbXBsZW1lbnRlIHN1c3RpdHVpbW9zIGxvcyB2YWxvcmVzXG4jIGEgPSAwLjEzNjI0NSAgIGIgPSAtMC4wMDMyNDEgICB4ID0gNCAgLS0+IDAuMTM2MjQ1ICsgKC0wLjAwMzI0MSkgKiA0ID0gMC4xMjM4NCA9IDAuMTIzM1xuYGBgIn0= -->
-<pre class="r"><code>a&lt;-corData[1, ];b&lt;-corData[2, ]
-model1&lt;-a~b #defición del modelo
-reg1&lt;-lm(model1) #ajustar el modelo
-summary(reg1)
-# La regresion lineal se represena Y&#39; = a + b * X
-# para calcular x = 4 simplemente sustituimos los valores
-# a = 0.136245   b = -0.003241   x = 4  --&gt; 0.136245 + (-0.003241) * 4 = 0.12384 = 0.1233</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<ol start="32" style="list-style-type: decimal">
-<li>Considerando la variable corData, ¿cuál es el valor de de
-significación de la pendiente (b) del modelo de regresión lineal de la
-variable de la fila 2 sobre la variable de la fila 3?</li>
-</ol>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYTwtY29yRGF0YVsyLCBdO2I8LWNvckRhdGFbMywgXVxubW9kZWwxPC1hfmIgI2RlZmljacOzbiBkZWwgbW9kZWxvXG5yZWcxPC1sbShtb2RlbDEpICNhanVzdGFyIGVsIG1vZGVsb1xuc3VtbWFyeShyZWcxKVxuIyBWYWxvciBkZSBsYSBzaWduaWZpY2FjaW9uID0gcC12YWx1ZSA9IDAuMjM2NVxuYGBgIn0= -->
-<pre class="r"><code>a&lt;-corData[2, ];b&lt;-corData[3, ]
-model1&lt;-a~b #defición del modelo
-reg1&lt;-lm(model1) #ajustar el modelo
-summary(reg1)
-# Valor de la significacion = p-value = 0.2365</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<ol start="33" style="list-style-type: decimal">
-<li>Considerando la variable corData, ¿qué podemos indicar con respecto
-a la forma de la variable de la Fila 4 atendiendo al estadístico
-correspondiente? Nota: considerar para la respuesta que el intervalo
-central del estadístico viene definido por [-0.1,0.1]</li>
-</ol>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3VtKChjb3JEYXRhWzQsXS1tZWFuKGNvckRhdGFbNCxdKSleMykvKGxlbmd0aChjb3JEYXRhWzQsXSkqc2QoY29yRGF0YVs0LF0pXjMpXG5mQmFzaWNzOjpza2V3bmVzcyhjb3JEYXRhWzQsXSlcbiMgY29lZmljaWVudGUgPiAwIGNvcnJlbGFjaW9uIHBvc2l0aXZhID0gYXNpbWV0cmlhIHBvc2l0aXZhXG4jIGNvZWZpY2llbnRlID0gMCBhdXNlbmNpYSBkZSBjb3JyZWxhY2lvbiA9IHNpbWV0cmljYVxuIyBjb2VmaWNpZW50ZSA8IDAgY29ycmVsYWNpb24gbmVnYXRpdmEgPSBhc2ltZXRyaWEgbmVnYXRpdmFcbiMgMC4xMzQzNjE1IC0tPiBBc2ltZXRyaWNhIHBvc2l0aXZhXG5gYGAifQ== -->
-<pre class="r"><code>sum((corData[4,]-mean(corData[4,]))^3)/(length(corData[4,])*sd(corData[4,])^3)
-fBasics::skewness(corData[4,])
-# coeficiente &gt; 0 correlacion positiva = asimetria positiva
-# coeficiente = 0 ausencia de correlacion = simetrica
-# coeficiente &lt; 0 correlacion negativa = asimetria negativa
-# 0.1343615 --&gt; Asimetrica positiva</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<ol start="34" style="list-style-type: decimal">
-<li>Las variables TempAlb y TempCR contienen la temperatura medida en
-diferentes puntos de las provincias de Albacete y Ciudad Real en un día
-determinado ¿Cuál de las dos provincias tiene más de un 45 por ciento de
-zonas con medidas de temperatura mayores a la media de temperatura de la
-provincia?</li>
-</ol>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucHJpbnQoVGVtcEFsYilcbnByaW50KFRlbXBDUilcbiMgYXV4ID0gIHBvcmNpZW50b1xubWVkaWFDUiA8LSBtZWFuKFRlbXBDUilcbm1lZGlhQWxiIDwtIG1lYW4oVGVtcEFsYilcblxubWF5b3Jlc0NSIDwtIDBcbmZvcihpIGluIDE6bGVuZ3RoKFRlbXBDUikpe1xuICBhdXg9VGVtcENSW2ldXG4gIGlmKHF1YW50aWxlKGF1eCwwLjQ1KT5tZWRpYUNSKXtcbiAgICBtYXlvcmVzQ1IgPSBtYXlvcmVzQ1IgKyAxXG4gIH1cbn1cbnByaW50KG1heW9yZXNDUilcblxubWF5b3Jlc0FsYiA8LTBcbmZvcihpIGluIDE6bGVuZ3RoKFRlbXBBbGIpKXtcbiAgYXV4PVRlbXBBbGJbaV1cbiAgaWYocXVhbnRpbGUoYXV4LDAuNDUpPm1lZGlhQWxiKXtcbiAgICBtYXlvcmVzQWxiID0gbWF5b3Jlc0FsYiArIDFcbiAgfVxufVxucHJpbnQobWF5b3Jlc0FsYilcbiMgQ2l1ZGFkIFJlYWxcbmBgYCJ9 -->
-<pre class="r"><code>print(TempAlb)
-print(TempCR)
-# aux =  porciento
-mediaCR &lt;- mean(TempCR)
-mediaAlb &lt;- mean(TempAlb)
-
-mayoresCR &lt;- 0
-for(i in 1:length(TempCR)){
-  aux=TempCR[i]
-  if(quantile(aux,0.45)&gt;mediaCR){
-    mayoresCR = mayoresCR + 1
-  }
-}
-print(mayoresCR)
-
-mayoresAlb &lt;-0
-for(i in 1:length(TempAlb)){
-  aux=TempAlb[i]
-  if(quantile(aux,0.45)&gt;mediaAlb){
-    mayoresAlb = mayoresAlb + 1
-  }
-}
-print(mayoresAlb)
-# Ciudad Real</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<ol start="35" style="list-style-type: decimal">
-<li>Las variables TempAlb y TempCR contienen la temperatura medida en
-diferentes puntos de las provincias de Albacete y Ciudad Real en un día
-determinado ¿Cuál de las dos provincias tiene de un mayor número de
-zonas con medidas de temperatura que se puean considerar atípicas con
-respecto al resto de la provincia?</li>
-</ol>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYm94cGxvdChUZW1wQWxiKSRzdGF0c1xuYm94cGxvdChUZW1wQ1IpJHN0YXRzXG5cbm91dGxpZXJzQWxiPWJveHBsb3QoVGVtcEFsYikgIyBWYWxvcmVzIGV4dHJlbW9zIG8gYXRpcGljb3MgKG91dGxpZXIpXG5vdXRsaWVyc0NSPWJveHBsb3QoVGVtcENSKVxuXG5vdXRsaWVyc0FsYiRvdXQgIyBWYWxvciBudW1lcmljbyBkZSBsb3Mgb3V0bGllcnMgc2kgbG9zIGhheVxub3V0bGllcnNDUiRvdXRcbiMgQW1iYXMgdGllbmVuIGFsZ3VuYSB6b25hIGNvbiB2YWxvcmVzIGF0aXBpY29zIHkgc29uIGlndWFsIG51bWVyb1xuYGBgIn0= -->
-<pre class="r"><code>boxplot(TempAlb)$stats
-boxplot(TempCR)$stats
-
-outliersAlb=boxplot(TempAlb) # Valores extremos o atipicos (outlier)
-outliersCR=boxplot(TempCR)
-
-outliersAlb$out # Valor numerico de los outliers si los hay
-outliersCR$out
-# Ambas tienen alguna zona con valores atipicos y son igual numero</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<ol start="36" style="list-style-type: decimal">
-<li>Las variables valoracion1 y valoracion2 contienen la valoración
-otorgada por una misma persona a dos periódicos diferentes. ¿Cuál sería
-la proporción de personas, de las que han puntuado con un 4 al periodico
-asociado a la valoracion2, han puntuado con un 4 al periódico asociado a
-valoracion1?</li>
-</ol>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucHJvcG9yY2lvbjEgPC0gdGFwcGx5KHZhbG9yYWNpb24xLHZhbG9yYWNpb24yLG1lYW4pXG5wcmludChwcm9wb3JjaW9uKVxuIyBSZXNwdWVzdGEgMC4zNTcxXG5gYGAifQ== -->
-<pre class="r"><code>proporcion1 &lt;- tapply(valoracion1,valoracion2,mean)
-print(proporcion)
-# Respuesta 0.3571</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<ol start="37" style="list-style-type: decimal">
-<li>Considerando la variable corData, ¿cuál es la bondad de ajuste del
-modelo de regresión lineal de la variable de la fila 3 sobre la variable
-de la fila 1?</li>
-</ol>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYTwtY29yRGF0YVszLCBdO2I8LWNvckRhdGFbMSwgXVxubW9kZWwxPC1hfmIgI2RlZmljacOzbiBkZWwgbW9kZWxvXG5yZWcxPC1sbShtb2RlbDEpICNhanVzdGFyIGVsIG1vZGVsb1xuc3VtbWFyeShyZWcxKVxuIyBSZXNwdWVzdGEgMC4wMDExNTggLS0+IFItc3VhcmVkIGJvbmRhIGRlIGFqdXN0ZVxuYGBgIn0= -->
-<pre class="r"><code>a&lt;-corData[3, ];b&lt;-corData[1, ]
-model1&lt;-a~b #defición del modelo
-reg1&lt;-lm(model1) #ajustar el modelo
-summary(reg1)
-# Respuesta 0.001158 --&gt; R-suared bonda de ajuste</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
+</div>
 </div>
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIk5vdGVib29rIGVqZXJjaWNpb3MiDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQojIyBFamVyY2ljaW9zIGRlIGVzdGFkw61zdGljYQ0KDQoxKSBPYnRlbmVyIHN1bW1hcnkgY29uIGxvcyBwcmluY2lwYWxlcyB2YWxvcmVzIGRlIGxhIGVzdGFkw61zdGljYSBkZXNjcmlwdGl2YSBkZSB0b2RhcyBsYXMgYXNpZ25hdHVyYXMgY29udGVuaWRhcyBlbiBlbCBkYXRhc2V0Lg0KYGBge3J9DQpsb2FkKCJkYXRhc2V0LlJEYXRhIikNCnN1bW1hcnkoZGF0YXNldCkNCmBgYA0KDQoNCjIpIE9idGVuZXIgc3VtbWFyeSBjb24gbG9zIHByaW5jaXBhbGVzIHZhbG9yZXMgZGUgbGEgZXN0YWTDrXN0aWNhIGRlc2NyaXB0aXZhIGRlIGxhIHByaW1lcmEgYXNpZ25hdHVyYS4NCmBgYHtyfQ0Kc3VtbWFyeShkYXRhc2V0KVssMV0NCmBgYA0KDQoNCjMpIMK/Q3XDoWwgZXMgbGEgYXNpZ25hdHVyYSBjb24gbWF5b3Igbm90YSBtZWRpYT8NCmBgYHtyfQ0KYWxsX21lYW49TlVMTA0KZm9yKGkgaW4gMTpuY29sKGRhdGFzZXQpKXsgI1NlIHJlY29ycmVuIGxhcyBjb2x1bW5hcw0KICBhdXg9ZGF0YXNldFssaV0NCiAgYWxsX21lYW49YyhhbGxfbWVhbixtZWFuKGF1eCkpICNTZSBjYWxjdWxhbiBsYXMgbWVkaWFzDQp9DQoNCndoaWNoKG1heChhbGxfbWVhbik9PWFsbF9tZWFuKQ0KYGBgDQoNCg0KNCkgUmVhbGl6YXIgdW4gaGlzdG9ncmFtYSBjb21wbGV0byBkZWwgZGF0YXNldC4NCmBgYHtyfQ0KaGlzdChkYXRhc2V0KQ0KYGBgDQoNCg0KNSkgwr9IYXkgYWxnw7puIG91dGxpZXJzIGVuIGFsZ3VuYSBhc2lnbmF0dXJhPyBQaWVuc2EgcXVlIHBvZHLDrWEgY2F1c2FyLg0KYGBge3J9DQpib3hfdmFyPWJveHBsb3QoZGF0YXNldCkNCmJveF92YXIkb3V0DQpgYGANCg0KDQo2KSDCv0N1w6FudGFzIGFzaWduYXR1cmFzIHRpZW5lbiBtw6FzIGRlbCA0MCUgZGUgZXN0dWRpYW50ZXMgY29uIHVuYSBub3RhIG1heW9yIHF1ZSA4Pw0KDQpgYGB7cn0NCmZvcihpIGluIDE6IG5jb2woZGF0YXNldCkpew0KICBhdXg9ZGF0YXNldFssaV0NCiAgaWYocXVhbnRpbGUoYXV4LDAuNik+OCl7DQogICAgcHJpbnQoaSkNCiAgfQ0KfQ0KYGBgDQoNCg0KNykgQ29tcGFyYW5kbyBsYSBzw6lwdGltYSB5IGxhIG5vdmVuYSBhc2lnbmF0dXJhOiDCv0N1YWwgZGUgZWxsYXMgZXMgbcOhcyBzaW1pbGFyIGEgdW5hIGRpc3RyaWJ1Y2nDs24gbm9ybWFsPyANCiMgwr9Db21vIHNvbiBsbGFtYWRhcyBkZXBlbmRpZW5kbyBkZWwgdmFsb3IgZGVsIHBhcsOhbWV0cm8gdXRpbGl6YWRvPw0KYGBge3J9DQpwcmludChmQmFzaWNzOjprdXJ0b3NpcyhkYXRhc2V0Wyw3XSkpICNMZXB0b2t1cnRpYw0KcHJpbnQoZkJhc2ljczo6a3VydG9zaXMoZGF0YXNldFssOV0pKSAjUGxhdHlrdXJ0aWMNCmBgYA0KDQoNCjgpIENvbXBhcmFuZG8gbGEgcXVpbnRhLCBvY3RhdmEgeSBkw6ljaW1hIGFzaWduYXR1cmE6IMK/Q3VhbCBkZSBlbGxhcyBwb2RlbW9zIGNvbnNpZGVyYXIgbcOhcyBzaW3DqXRyaWNhPyDCv1F1w6kgcG9kZW1vcyBkZWNpciBkZSBsYXMgb3RyYXMgYXNpZ25hdHVyYXM/DQpgYGB7cn0NCnByaW50KGZCYXNpY3M6OnNrZXduZXNzKGRhdGFzZXRbLDVdKSkgI1NpbWV0cmljYQ0KcHJpbnQoZkJhc2ljczo6c2tld25lc3MoZGF0YXNldFssOF0pKSAjVW5hIHBvY2EgYXNpbWV0cmlhIG5lZ2F0aXZhDQpwcmludChmQmFzaWNzOjpza2V3bmVzcyhkYXRhc2V0WywxMF0pKSAjVW5hIHBlcXVlw7FhIGFzaW1ldHJpYSBwb3NpdGl2YQ0KYGBgDQoNCg0KOSkgwr9RdcOpIHBlcmNlbnRpbCByZXByZXNlbnRhIHVuYSBub3RhIGRlIDggcGFyYSBsYSBwcmltZXJhIGFzaWduYXR1cmE/DQpgYGB7cn0NCiNOb3MgcHJlZ3VudGEgbGEgay4gSGF5IGRvcyBzb2x1Y2lvbmVzDQpzdW0oZGF0YXNldFssMV08PTgpL2xlbmd0aChkYXRhc2V0WywxXSkNCg0KIyBTZWd1bmRhIHNvbHVjaW9uDQphdXg9ZGF0YXNldFssMV0gI1NPTFVDSU9OIA0KcGVyPTA7DQp3aGlsZSAocm91bmQocXVhbnRpbGUoYXV4LHBlciksMykhPTgpew0KICBwZXI9cGVyKzAuMDAxOw0KfQ0KcGVyDQpgYGANCg0KDQoxMCkgwr9FbiBxdcOpIGFzaWduYXR1cmEgdGllbmUgbcOhcyBtw6lyaXRvIG9idGVuZXIgdW4gOT8NCmBgYHtyfQ0KdGlwPU5VTEwNCm5vdGEgPSA5DQpmb3IoaSBpbiAxOm5jb2woZGF0YXNldCkpew0KICBhdXg9ZGF0YXNldFssaV0NCiAgdGlwPWModGlwLChub3RhLW1lYW4oYXV4KSkvc2QoYXV4KSkNCn0NCndoaWNoKG1heCh0aXApPT10aXApDQpgYGANCg0KDQoxMSkgR3VhcmRhciBlbiB1biBvYmpldG8gbGFzIG9waW5pb25lcyBkZSBsb3MgbWFyaWRvcyB5IGxhcyBtdWplcmVzIHkgbW9zdHJhciBsYSB0YWJsZSBjb24gdmFsb3JlcyBtYXJnaW5hbGVzIHkgc3VtYXRvcmlvLg0KYGBge3J9DQpkYXRvcyA8LSBsb2FkKCJTZXNzaW9uNC5SZGF0YSIpDQpIb21icmVzIDwtIFNleHVhbEZ1biRIdXNiYW5kDQpNdWplcmVzIDwtIFNleHVhbEZ1biRXaWZlDQp0YWIub3BpbmlvbiA8LSB0YWJsZShIb21icmVzLCBNdWplcmVzKQ0KdGFiLm9waW5pb24NCm1hcmdpbi50YWJsZSh0YWIub3BpbmlvbiwxKQ0KbWFyZ2luLnRhYmxlKHRhYi5vcGluaW9uLDIpDQphZGRtYXJnaW5zKHRhYi5vcGluaW9uKQ0KYGBgDQoNCg0KMTIpIFJlYWxpemFyIGNvbiBsZXllbmRhIGxvcyBkaWFncmFtYXMgZGUgYmFycmFzDQpgYGB7cn0NCmJhcnBsb3QodGFiLm9waW5pb24pDQpiYXJwbG90KHQodGFiLm9waW5pb24pKQ0KYmFycGxvdCh0KHRhYi5vcGluaW9uKSwgYmVzaWRlPVRSVUUsIGxlZ2VuZD1UUlVFKQ0KYGBgDQoNCg0KMTMpIEFuYWxpemFuZG8gbG9zIGRpYWdyYW1hcywgwr9DdcOhbCBlcyBsbyBvcGluacOzbiBtw6FzIGNvbXBhcnRpZGEgcG9yIGhvbWJyZSB5IG11amVyZXMgPyDCv1kgbGEgbWVub3MgY29tcGFydGlkYT8NCmBgYHtyfQ0KYmFycGxvdCh0KHRhYi5vcGluaW9uKSwgbGVnZW5kPVRSVUUpDQpwcmludC5ub3F1b3RlKCdPcGluaW9uIG1hcyBjb21wYXJ0aWRhOiBhbHdheXMuZnVuJykNCnByaW50Lm5vcXVvdGUoJ09waW5pb24gbWVub3MgY29tcGFydGlkYTogbmV2ZXIuZnVuJykNCmBgYA0KDQoNCjE0KSBPYnRlbmVyIGxhcyBmcmVuY3VlbmNpYXMgcmVsYXRpdmFzLg0KYGBge3J9DQp0YWJsZShIb21icmVzLE11amVyZXMpL2xlbmd0aChIb21icmVzKQ0KYGBgDQoNCg0KMTUpIFJlcGV0aXIgZGlhZ3JhbWFzIGRlIGJhcnJhcyBjb24gY29tbWFuZG8gYmVzaWRlPVRSVUUgcGFyYSBzZXBhcmFyIHZhcmlhYmxlcyBlbiB2YXJpYXMgY29sdW1uYXMuDQpgYGB7cn0NCmJhcnBsb3QodGFiLm9waW5pb24sIGxlZ2VuZD1UUlVFLCBiZXNpZGU9VFJVRSkNCmJhcnBsb3QodCh0YWIub3BpbmlvbiksIGxlZ2VuZD1UUlVFLCBiZXNpZGU9VFJVRSkNCmBgYA0KDQoNCjE2KSBSZWFsaXphIHVuIGhpc3RvZ3JhbWEgY29uIGxhcyBub3RhcyBkZSBsb3MgMTAwIGFsdW1ub3MgZW4gbGEgYXNpZ25hdHVyYSBwcmltZXJhIChjb3JkYXRhKS4NCmBgYHtyfQ0Kbm90YXMgPC0gcHJpbnQoY29yRGF0YVsxOjEwMF0pDQpib3hwbG90KG5vdGFzKQ0KaGlzdChjb3JEYXRhWzEsMToxMDBdKQ0KYGBgDQoNCg0KMTcpIFJlYWxpemEgdW4gZGlhZ3JhbWEgZGUgY2FqYXMgY29tcGFyYW5kbyBsYXMgZG9zIHByaW1lcmFzIGFzaWduYXR1cmFzLg0KYGBge3J9DQp2YXJzPWRhdGEuZnJhbWUoY29yRGF0YVsxLF0sY29yRGF0YVsyLF0pDQpib3hwbG90KHZhcnMpDQpgYGANCg0KDQoxOCkgUmVhbGl6YSB1biBkaWFncmFtYSBkZSBjYWphcyBkZSB0b2RhcyBsYXMgYXNpZ25hdHVyYXMuDQpgYGB7cn0NCnZhcnM9ZGF0YS5mcmFtZShjb3JEYXRhWzEsXSxjb3JEYXRhWzIsXSxjb3JEYXRhWzMsXSxjb3JEYXRhWzQsXSkNCmJveHBsb3QodmFycykNCmBgYA0KDQoNCg0KMTkpIMK/SGF5IGFsZ8O6biBvdXRsaWVycyBlbiBhbGd1bmEgYXNpZ25hdHVyYT8NCmBgYHtyfQ0KY29yRGF0YVsxLDFdPTMwICMgcGFyYSBxdWUgdGVuZ2Ftb3MgYWxndW4gb3V0bGllcg0KZm9yIChpIGluIDE6cm93KGNvckRhdGEpKSB7ICMgY29sdW1uIGxvb3ANCiAgYXV4ID0gY29yRGF0YVtpLF0gIyBhdXggdmFyaWFibGUgZm9yIGNvbHVtbg0KICBib3hfdmFyPWJveHBsb3QoYXV4KSAjIGNhbGN1bGF0ZSBhbGwgbWVhbnMNCiAgaWYobGVuZ3RoKGJveF92YXIkb3V0KT4wKSB7DQogICAgICBwcmludChpKQ0KICAgICAgcHJpbnQoYm94X3ZhciRvdXQpDQogICAgfQ0KfQ0KDQojIE90cmEgc29sdWNpb24NCm5fb3V0bGllcnMgPSAwDQpmb3IgKGkgaW4gMTpucm93KGNvckRhdGEpKXsNCiAgYXV4ID0gY29yRGF0YVtpLF0NCiAgYm94ID0gYm94cGxvdChhdXgpDQogIGlmIChsZW5ndGgoYm94JG91dCk+MCl7DQogICAgcHJpbnQoaSkNCiAgICBuX291dGxpZXJzICsgMQ0KICB9DQp9DQpgYGANCg0KDQoyMCkgUmVhbGl6YSB1biBwbG90IHBhcmEgY29tcGFyYXIgbGFzIGFzaWduYXR1cmFzIDMgeSA0Lg0KYGBge3J9DQpwbG90KGNvckRhdGFbMywgXSxjb3JEYXRhWzQsXSkNCmBgYA0KDQoNCjIxKSBDcmVhIHVuIG9iamV0byB5IHJlYWxpemEgdW5hIG1hdHJpeiBjb24gbGEgcmVsYWNpw7NuIGRlIHRvZGFzIGxhcyB2YXJpYWJsZXMuDQpgYGB7cn0NCnBhaXJzKHZhcnMpDQojIE90cmEgc29sdWNpb24NCnZhcmlhYmxlcyA8LSBkYXRhLmZyYW1lKGNvckRhdGFbMSxdLCBjb3JEYXRhWzIsXSwgY29yRGF0YVszLF0sIGNvckRhdGFbNCxdKQ0KcGFpcnModmFyaWFibGVzKQ0KYGBgDQoNCg0KMjIpIMK/UXXDqSBwZXJjZW50aWwgcmVwcmVzZW50YSB1bmEgbm90YSBkZSA4IHBhcmEgbGEgcHJpbWVyYSBhc2lnbmF0dXJhPw0KYGBge3J9DQpub3RhID0gOA0Kc3VtKGNvckRhdGFbMSxdPD0gbm90YSAvbGVuZ3RoKGNvckRhdGFbMSxdKSkNCmBgYA0KDQoNCjIzKSBDYWxjdWxhIGVsIGNvZWZpY2llbnRlIGRlIGNvcnJlbGFjacOzbiBkZSBQZWFyc29uIGVudHJlIHRvZGFzICBsYXMgYXNpZ25hdHVyYXMgeSBhbmFsaXphIGxvcyByZXN1bHRhZG9zIG9idGVuaWRvcy4NCmBgYHtyfQ0KY29yKHZhcnMsIHVzZSA9ICJwYWlyd2lzZS5jb21wbGV0ZS5vYnMiKQ0KIyBIYXkgcmVsYWNpb24gbXV5IGJ1ZW5hIGVudHJlIDIgeSA0DQpgYGANCg0KDQoyNCkgRWxpZ2UgbGFzIGFzaWduYXR1cmFzIGNvbiBtYXlvciByZWxhY2nDs24gbGluZWFsIHkgcmVhbGl6YSB1biBNb2RlbG8gZGUgUmVncmVzacOzbiBMaW5lYWwuDQpgYGB7cn0NCkFzaWduYXR1cmEyIDwtIGNvckRhdGFbMixdDQpBc2lnbmF0dXJhNCA8LSBjb3JEYXRhWzQsXQ0KbW9kZWxvMSA8LSBBc2lnbmF0dXJhMiB+IEFzaWduYXR1cmE0DQpgYGANCg0KDQoyNSkgQWp1c3RhIGVsIE1vZGVsbyBkZSBSZWdyZXNpw7NuIExpbmVhbCBlIGluZGljYSBsYSBib25kYWQgb2J0ZW5pZGEgcG9yIGRpY2hvIG1vZGVsby4NCmBgYHtyfQ0KcmVncmVzaW9uMSA8LSBsbShtb2RlbG8xKQ0Kc3VtbWFyeShyZWdyZXNpb24xKQ0KIyBSLVNxdWFyZWQgZXMgY2FzaSAxICgwLDk5MDQpIC0+IGJvbmRhZCBkZSBhanVzdGUgYnVlbmENCmBgYA0KDQoNCjI2KSBSZWFsaXphIHByZWRpY2Npb25lcyBkZSB1bmEgZGUgbGFzIGFzaWduYXR1cmFzIGVuIGZ1bmNpw7NuIGRlIGxhIG5vdGEgb2J0ZW5pZGEgZW4gbGEgb3RyYSB5IHJhem9uYSB0dXMgcmVzdWx0YWRvcyBvYnRlbmlkb3MuIFJlYWxpemEgdW4gZ3LDoWZpY28gcXVlIG11ZXN0cmUgdmFyaWFzIHByZWRpY2Npb25lcyBlbiBjb2xvciByb2pvIGVuIGVsIE1vZGVsbyBkZSBSZWdyZXNpw7NuIExpbmVhbCByZWFsaXphZG8uDQpgYGB7cn0NCnBsb3QobW9kZWwxKTthYmxpbmUocmVnbCkNCnByZWQ8LXByZWRpY3QocmVnbCxkYXRhLmZyYW1lKEFzaWduYXR1cmE0PC1jKDEwLDcsOCkpKQ0KcHJpbnQocHJlZCkNCnBvaW50cyhjYmluZChBc2lnbmF0dXJhNCxwcmVkKSxjb2w9InJlZCIpDQojIFggPSBBc2lnbmF0dXJhIDQsIHZhbG9yZXMgcXVlIHF1ZXJlbW9zIHByZWRlY2lyDQpgYGANCg0KDQoyNykgMTIgwr9FbiBjdcOhbCBkZSBsYXMgNCBhc2lnbmF0dXJhcyB0aWVuZSBtw6FzIHZhbG9yIHNhY2FyIHVuIDk/DQpgYGB7cn0NCnRpcCA9IE5VTEwNCm5vdGEgPSA5DQpmb3IgKGkgaW4gMTpucm93KGNvckRhdGEpKSB7ICMgcmVjb3JyZXIgY29sdW1uYXMNCiAgYXV4PWNvckRhdGFbaSxdICMgZ3VhcmRhciBsYSBjb2x1bW5hDQogIHRpcD1jKHRpcCwobm90YS1tZWRpYW4oYXV4KSkvc2QoYXV4KSkgIyBhw7FhZGltb3MgbGEgdGlwIGFsIHZlY3Rvcg0KfQ0KcHJpbnQubm9xdW90ZSgiVGllbmUgbWFzIG1lcml0byBzYWNhciB1biA5IGVuIGxhIGFzaWduYXR1cmE6Iik7cHJpbnQod2hpY2gobWF4KHRpcCk9PXRpcCkpDQpgYGANCg0KDQoyOCkgQ29uc2lkZXJhbmRvIGxhIHZhcmlhYmxlIGNvckRhdGEsIMK/cXXDqSBwb2RlbW9zIGluZGljYXIgY29uIHJlc3BlY3RvIGEgbGEgZm9ybWEgZGUgbGEgdmFyaWFibGUgZGUgbGEgRmlsYSAyIGF0ZW5kaWVuZG8gYWwgZXN0YWTDrXN0aWNvIGNvcnJlc3BvbmRpZW50ZT8gTm90YTogY29uc2lkZXJhciBwYXJhIGxhIHJlc3B1ZXN0YSBxdWUgZWwgaW50ZXJ2YWxvIGNlbnRyYWwgZGVsIGVzdGFkw61zdGljbyB2aWVuZSBkZWZpbmlkbyBwb3IgWy0wLjEsMC4xXQ0KYGBge3J9DQpsb2FkKCJWYXJpYWJsZXMyLlJkYXRhIikNCnByaW50KGZCYXNpY3M6Omt1cnRvc2lzKGNvckRhdGFbMixdKSkNCiMgLTEuMjQ2MzU1IC0tPiBwbGF0aWN1cnRpY2EgPCAwDQpgYGANCg0KDQoyOSkgQ29uc2lkZXJhbmRvIGxhIHZhcmlhYmxlIGNvckRhdGEsIMK/ZW50cmUgcXVlIGRvcyBmaWxhcyBlbmNvbnRyYXLDrWFtb3MgbGEgbWF5b3IgY29ycmVsYWNpw7NuIGludmVyc2E/DQpgYGB7cn0NCmNhdCgiQ29ycmVsYWNpb24gVmFyNCB5IFZhcjEgPSIsIGNvcihjb3JEYXRhWzQsXSxjb3JEYXRhWzEsXSkpDQpjYXQoIkNvcnJlbGFjaW9uIFZhcjIgeSBWYXIxID0iLCBjb3IoY29yRGF0YVsyLF0sY29yRGF0YVsxLF0pKQ0KY2F0KCJDb3JyZWxhY2lvbiBWYXIxIHkgVmFyMSA9IiwgY29yKGNvckRhdGFbMSxdLGNvckRhdGFbMSxdKSkNCmNhdCgiQ29ycmVsYWNpb24gVmFyNCB5IFZhcjIgPSIsIGNvcihjb3JEYXRhWzEsXSxjb3JEYXRhWzIsXSkpDQojIE1heW9yIGNvcnJlbGFjaW9uIGludmVyc2EgYnVzY2Ftb3MgbGEgcXVlIHRlbmdhIG1heW9yIHZhbG9yIG5lYWd0aXZvLCBzZXJpYSA0IHkgMSBjb24gLTAuMDA2NDk4ODgzDQpgYGANCg0KDQozMCkgQ29uc2lkZXJhbmRvIGxhIHZhcmlhYmxlIGNvckRhdGEsIMK/Y3XDoWwgZXMgZWwgdmFsb3IgZGUgbG9zIGNvZWZpY2llbnRlcyBkZWwgbW9kZWxvIGRlIHJlZ3Jlc2nDs24gbGluZWFsIGRlIGxhIHZhcmlhYmxlIGRlIGxhIGZpbGEgMyBzb2JyZSBsYSB2YXJpYWJsZSBkZSBsYSBmaWxhIDQgc2kgY29uc2lkZXJhbW9zIGxhIHJlY3RhIGNvbW8geSc9YStieD8NCmBgYHtyfQ0KYTwtY29yRGF0YVszLCBdO2I8LWNvckRhdGFbNCwgXQ0KbW9kZWwxPC1hfmIgI2RlZmljacOzbiBkZWwgbW9kZWxvDQpyZWcxPC1sbShtb2RlbDEpICNhanVzdGFyIGVsIG1vZGVsbw0Kc3VtbWFyeShyZWcxKQ0KIyBFbiBlbCBhcGFydGFkbyBjb2VmZmljaWVudHM6IEVzdGltYXRlIDQuODI0MzUgeSAwLjA1NTgxDQpgYGANCg0KDQozMSkgQ29uc2lkZXJhbmRvIGxhIHZhcmlhYmxlIGNvckRhdGEsIMK/Y3VhbCBzZXLDrWEgZWwgdmFsb3IgeScgcXVlIHByZWRlY2lyw61hIGVsIG1vZGVsbyBkZSByZWdyZXNpw7NuIGxpbmVhbCBkZSBsYSB2YXJpYWJsZSBkZSBsYSBmaWxhIDEgc29icmUgbGEgdmFyaWFibGUgZGUgbGEgZmlsYSAyIHBhcmEgeD00Pw0KYGBge3J9DQphPC1jb3JEYXRhWzEsIF07YjwtY29yRGF0YVsyLCBdDQptb2RlbDE8LWF+YiAjZGVmaWNpw7NuIGRlbCBtb2RlbG8NCnJlZzE8LWxtKG1vZGVsMSkgI2FqdXN0YXIgZWwgbW9kZWxvDQpzdW1tYXJ5KHJlZzEpDQojIExhIHJlZ3Jlc2lvbiBsaW5lYWwgc2UgcmVwcmVzZW5hIFknID0gYSArIGIgKiBYDQojIHBhcmEgY2FsY3VsYXIgeCA9IDQgc2ltcGxlbWVudGUgc3VzdGl0dWltb3MgbG9zIHZhbG9yZXMNCiMgYSA9IDAuMTM2MjQ1ICAgYiA9IC0wLjAwMzI0MSAgIHggPSA0ICAtLT4gMC4xMzYyNDUgKyAoLTAuMDAzMjQxKSAqIDQgPSAwLjEyMzg0ID0gMC4xMjMzDQpgYGANCg0KDQozMikgQ29uc2lkZXJhbmRvIGxhIHZhcmlhYmxlIGNvckRhdGEsIMK/Y3XDoWwgZXMgZWwgdmFsb3IgZGUgZGUgc2lnbmlmaWNhY2nDs24gZGUgbGEgcGVuZGllbnRlIChiKSBkZWwgbW9kZWxvIGRlIHJlZ3Jlc2nDs24gbGluZWFsIGRlIGxhIHZhcmlhYmxlIGRlIGxhIGZpbGEgMiBzb2JyZSBsYSB2YXJpYWJsZSBkZSBsYSBmaWxhIDM/DQpgYGB7cn0NCmE8LWNvckRhdGFbMiwgXTtiPC1jb3JEYXRhWzMsIF0NCm1vZGVsMTwtYX5iICNkZWZpY2nDs24gZGVsIG1vZGVsbw0KcmVnMTwtbG0obW9kZWwxKSAjYWp1c3RhciBlbCBtb2RlbG8NCnN1bW1hcnkocmVnMSkNCiMgVmFsb3IgZGUgbGEgc2lnbmlmaWNhY2lvbiA9IHAtdmFsdWUgPSAwLjIzNjUNCmBgYA0KDQoNCjMzKSBDb25zaWRlcmFuZG8gbGEgdmFyaWFibGUgY29yRGF0YSwgwr9xdcOpIHBvZGVtb3MgaW5kaWNhciBjb24gcmVzcGVjdG8gYSBsYSBmb3JtYSBkZSBsYSB2YXJpYWJsZSBkZSBsYSBGaWxhIDQgYXRlbmRpZW5kbyBhbCBlc3RhZMOtc3RpY28gY29ycmVzcG9uZGllbnRlPyBOb3RhOiBjb25zaWRlcmFyIHBhcmEgbGEgcmVzcHVlc3RhIHF1ZSBlbCBpbnRlcnZhbG8gY2VudHJhbCBkZWwgZXN0YWTDrXN0aWNvIHZpZW5lIGRlZmluaWRvIHBvciBbLTAuMSwwLjFdDQpgYGB7cn0NCnN1bSgoY29yRGF0YVs0LF0tbWVhbihjb3JEYXRhWzQsXSkpXjMpLyhsZW5ndGgoY29yRGF0YVs0LF0pKnNkKGNvckRhdGFbNCxdKV4zKQ0KZkJhc2ljczo6c2tld25lc3MoY29yRGF0YVs0LF0pDQojIGNvZWZpY2llbnRlID4gMCBjb3JyZWxhY2lvbiBwb3NpdGl2YSA9IGFzaW1ldHJpYSBwb3NpdGl2YQ0KIyBjb2VmaWNpZW50ZSA9IDAgYXVzZW5jaWEgZGUgY29ycmVsYWNpb24gPSBzaW1ldHJpY2ENCiMgY29lZmljaWVudGUgPCAwIGNvcnJlbGFjaW9uIG5lZ2F0aXZhID0gYXNpbWV0cmlhIG5lZ2F0aXZhDQojIDAuMTM0MzYxNSAtLT4gQXNpbWV0cmljYSBwb3NpdGl2YQ0KYGBgDQoNCg0KMzQpIExhcyB2YXJpYWJsZXMgVGVtcEFsYiB5IFRlbXBDUiBjb250aWVuZW4gbGEgdGVtcGVyYXR1cmEgbWVkaWRhIGVuIGRpZmVyZW50ZXMgcHVudG9zIGRlIGxhcyBwcm92aW5jaWFzIGRlIEFsYmFjZXRlIHkgQ2l1ZGFkIFJlYWwgZW4gdW4gZMOtYSBkZXRlcm1pbmFkbyDCv0N1w6FsIGRlIGxhcyBkb3MgcHJvdmluY2lhcyB0aWVuZSBtw6FzIGRlIHVuIDQ1IHBvciBjaWVudG8gZGUgem9uYXMgY29uIG1lZGlkYXMgZGUgdGVtcGVyYXR1cmEgbWF5b3JlcyBhIGxhIG1lZGlhIGRlIHRlbXBlcmF0dXJhIGRlIGxhIHByb3ZpbmNpYT8NCmBgYHtyfQ0KcHJpbnQoVGVtcEFsYikNCnByaW50KFRlbXBDUikNCiMgYXV4ID0gIHBvcmNpZW50bw0KbWVkaWFDUiA8LSBtZWFuKFRlbXBDUikNCm1lZGlhQWxiIDwtIG1lYW4oVGVtcEFsYikNCg0KbWF5b3Jlc0NSIDwtIDANCmZvcihpIGluIDE6bGVuZ3RoKFRlbXBDUikpew0KICBhdXg9VGVtcENSW2ldDQogIGlmKHF1YW50aWxlKGF1eCwwLjQ1KT5tZWRpYUNSKXsNCiAgICBtYXlvcmVzQ1IgPSBtYXlvcmVzQ1IgKyAxDQogIH0NCn0NCnByaW50KG1heW9yZXNDUikNCg0KbWF5b3Jlc0FsYiA8LTANCmZvcihpIGluIDE6bGVuZ3RoKFRlbXBBbGIpKXsNCiAgYXV4PVRlbXBBbGJbaV0NCiAgaWYocXVhbnRpbGUoYXV4LDAuNDUpPm1lZGlhQWxiKXsNCiAgICBtYXlvcmVzQWxiID0gbWF5b3Jlc0FsYiArIDENCiAgfQ0KfQ0KcHJpbnQobWF5b3Jlc0FsYikNCiMgQ2l1ZGFkIFJlYWwNCmBgYA0KDQoNCjM1KSBMYXMgdmFyaWFibGVzIFRlbXBBbGIgeSBUZW1wQ1IgY29udGllbmVuIGxhIHRlbXBlcmF0dXJhIG1lZGlkYSBlbiBkaWZlcmVudGVzIHB1bnRvcyBkZSBsYXMgcHJvdmluY2lhcyBkZSBBbGJhY2V0ZSB5IENpdWRhZCBSZWFsIGVuIHVuIGTDrWEgZGV0ZXJtaW5hZG8gwr9DdcOhbCBkZSBsYXMgZG9zIHByb3ZpbmNpYXMgdGllbmUgZGUgdW4gbWF5b3IgbsO6bWVybyBkZSB6b25hcyBjb24gbWVkaWRhcyBkZSB0ZW1wZXJhdHVyYSBxdWUgc2UgcHVlYW4gY29uc2lkZXJhciBhdMOtcGljYXMgY29uIHJlc3BlY3RvIGFsIHJlc3RvIGRlIGxhIHByb3ZpbmNpYT8NCmBgYHtyfQ0KYm94cGxvdChUZW1wQWxiKSRzdGF0cw0KYm94cGxvdChUZW1wQ1IpJHN0YXRzDQoNCm91dGxpZXJzQWxiPWJveHBsb3QoVGVtcEFsYikgIyBWYWxvcmVzIGV4dHJlbW9zIG8gYXRpcGljb3MgKG91dGxpZXIpDQpvdXRsaWVyc0NSPWJveHBsb3QoVGVtcENSKQ0KDQpvdXRsaWVyc0FsYiRvdXQgIyBWYWxvciBudW1lcmljbyBkZSBsb3Mgb3V0bGllcnMgc2kgbG9zIGhheQ0Kb3V0bGllcnNDUiRvdXQNCiMgQW1iYXMgdGllbmVuIGFsZ3VuYSB6b25hIGNvbiB2YWxvcmVzIGF0aXBpY29zIHkgc29uIGlndWFsIG51bWVybw0KYGBgDQoNCg0KMzYpIExhcyB2YXJpYWJsZXMgdmFsb3JhY2lvbjEgeSB2YWxvcmFjaW9uMiBjb250aWVuZW4gbGEgdmFsb3JhY2nDs24gb3RvcmdhZGEgcG9yIHVuYSBtaXNtYSBwZXJzb25hIGEgZG9zIHBlcmnDs2RpY29zIGRpZmVyZW50ZXMuIMK/Q3XDoWwgc2Vyw61hIGxhIHByb3BvcmNpw7NuIGRlIHBlcnNvbmFzLCBkZSBsYXMgcXVlIGhhbiBwdW50dWFkbyBjb24gdW4gNCBhbCBwZXJpb2RpY28gYXNvY2lhZG8gYSBsYSB2YWxvcmFjaW9uMiwgaGFuIHB1bnR1YWRvIGNvbiB1biA0IGFsIHBlcmnDs2RpY28gYXNvY2lhZG8gYSB2YWxvcmFjaW9uMT8NCmBgYHtyfQ0KcHJvcG9yY2lvbjEgPC0gdGFwcGx5KHZhbG9yYWNpb24xLHZhbG9yYWNpb24yLG1lYW4pDQpwcmludChwcm9wb3JjaW9uKQ0KIyBSZXNwdWVzdGEgMC4zNTcxDQpgYGANCg0KDQozNykgQ29uc2lkZXJhbmRvIGxhIHZhcmlhYmxlIGNvckRhdGEsIMK/Y3XDoWwgZXMgbGEgYm9uZGFkIGRlIGFqdXN0ZSBkZWwgbW9kZWxvIGRlIHJlZ3Jlc2nDs24gbGluZWFsIGRlIGxhIHZhcmlhYmxlIGRlIGxhIGZpbGEgMyBzb2JyZSBsYSB2YXJpYWJsZSBkZSBsYSBmaWxhIDE/DQpgYGB7cn0NCmE8LWNvckRhdGFbMywgXTtiPC1jb3JEYXRhWzEsIF0NCm1vZGVsMTwtYX5iICNkZWZpY2nDs24gZGVsIG1vZGVsbw0KcmVnMTwtbG0obW9kZWwxKSAjYWp1c3RhciBlbCBtb2RlbG8NCnN1bW1hcnkocmVnMSkNCiMgUmVzcHVlc3RhIDAuMDAxMTU4IC0tPiBSLXN1YXJlZCBib25kYSBkZSBhanVzdGUNCmBgYA0K</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIk5vdGVib29rIEVzdGFkw61zdGljYSAyIg0Kb3V0cHV0OiBodG1sX25vdGVib29rDQotLS0NCiMgSW5kaWNlDQoxLiBbRGlzdHJpYnVjaW9uZXMgZGUgUHJvYmFiaWxpZGFkXSgjc2VjdGlvbi0xKQ0KICAgIGEuIFtWYXJpYWJsZXMgQWxlYXRvcmllYXNdKCNzZWN0aW9uLTEtMSkNCiAgICBiLiBbRnVuY2lvbmVzIGRlIHByb2JhYmlsaWRhZCB5IGRlIGRpc3RyaWJ1Y2nDs25dKCNzZWN0aW9uLTEtMikNCiAgICBjLiBbTW9tZW50b3MgZGUgdW5hIHZhcmlhYmxlIGFsZWF0b3JpYV0oI3NlY3Rpb24tMS0zKQ0KICAgIGQuIFtEaWFncmFtYSBkZSBzZWN0b3JlcyAoUGllIGNoYXJ0KV0oI3NlY3Rpb24tMS00KQ0KICAgIGUuIFtEaWFncmFtYXMgZGUgZGlzcGVyc2lvbiAoU2NhdHRlcnBsb3RzKV0oI3NlY3Rpb24tMS01KQ0KICAgIGYuIFtCb3hwbG90XSgjc2VjdGlvbi0xLTYpDQoyLiBbRXN0YWTDrXN0aWNhXSgjc2VjdGlvbi0yKQ0KICAgIGEuIFtDb25jZXB0b3MgYsOhc2ljb3NdKCNzZWN0aW9uLTItMSkNCiAgICBiLiBbVGFibGFzIGRlIGZyZWN1ZW5jaWFdKCNzZWN0aW9uLTItMikNCiAgICBjLiBbTWVkaWRhcyBkZSBjZW50cmFsaXphY2lvbl0oI3NlY3Rpb24tMi0zKQ0KICAgIGQuIFtNZWRpZGFzIGRlIHZhcmlhY2lvbl0oI3NlY3Rpb24tMi00KQ0KICAgIGUuIFtDb3JyZWxhY2lvbl0oI3NlY3Rpb24tMi01KQ0KICAgIGUuIFtSZWdyZXNnaW9uIGxpbmVhbF0oI3NlY3Rpb24tMi02KQ0KDQoNCiMgRGlzdHJpYnVjaW9uZXMgZGUgUHJvYmFiaWxpZGFkIHsjc2VjdGlvbi0xfQ0KIyMgVmFyaWFibGVzIEFsZWF0b3JpZWFzIHsjc2VjdGlvbi0xLTF9DQpEZWZpbmljacOzbiBmb3JtYWwgZGUgdmFyaWFibGUgYWxlYXRvcmlhIFg6RSAtPiBSDQpVbmEgdmFyaWFibGUgYWxlYXRvcmlhIGVzIHVuYSBmdW5jacOzbiBlIC0+IFgoZSkgcXVlLCBhIGNhZGEgc3VjZXNvIGVsZW1lbnRhbCAiZSIgZGVsIGVzcGFjaW8gbXVlc3RyYWwgIkUiIGxlIGF0cmlidXllIHVuIMO6bmljbyBuw7ptZXJvIHJlYWwuDQoNCi0qKkV4cGVyaW1lbnRvKio6IFByb2Nlc28gZGUgb2J0ZW5lciB1biBkYXRvIGRhZGFzIHVuYXMgY29uZGljaW9uZXMgZGUgZXhwZXJpbWVudGFjacOzbi4gTGEgb2J0ZW5jacOzbiBkZSB1biBudWV2byBkYXRvLCBjb24gbGFzIG1pc21hcyBjb25kaWNpb25lcywgZXMgdW5hIHJlcGV0aWNpw7NuIGRlbCBleHBlcmltZW50by4NCg0KLSoqRXhwZXJpbWVudG8gYWxlYXRvcmlvKio6IEV4cGVyaW1lbnRvIHF1ZSBhbCByZXBldGlybG8gbm8gc2llbXByZSBzZSBvYnRpZW5lIGVsIG1pc21vIHZhbG9yLg0KDQpFamVtcGxvOiBNZWRpciBlbCB0aWVtcG8gcXVlIHVuYSBtYXF1aW5hIHRhcmRhIGVuIGhhY2VyIGxhIG1pc21hIHRhcmVhLCBvYnNlcnZhciBlbCB2YWxvciBkZSBsYW56YXIgdW4gZGFkby4NCg0KLSoqVmFyaWFibGUgYWxlYXRvcmlhKio6IEVzIGVsIHJlc3VsdGFkbyBkZSB1biBleHBlcmltZW50byBhbGVhdG9yaW8uDQoNCkNsYXNpZmljYWNpw7NuIGRlIGxhcyB2YXJpYWJsZXMgYWxlYXRvcmlhczoNCg0KKiBEaXNjcmV0YXM6IEFxdWVsbGFzIHF1ZSBzb2xvIHB1ZWRlbiB0b21hciB1biBuw7ptZXJvIGZpbml0byBvIGluZmluaXRvIGRlIGNhbG9yZXMuDQoqIENvbnRpbnVhczogUHVlZGVuIHRvbWFyIHVuIG7Dum1lcm8gaW5maW5pdG8gbm8gbnVtZXJhYmxlIGRlIHZhbG9yZXMuDQoNCkVqZW1wbG86IEV4cGVyaW1lbnRvIC0gTWVkaXIgZWwgdGllbXBvIGRlIGFjY2VzbyBkZSB1biBvcmRlbmFkb3IgYSB1bmEgcmVkLg0KVmFyaWFibGUgYWxlYXRvcmlhIC0gVGllbXBvIGRlIGFjY2VzbyAoVmFyaWFibGUgY29udGludWEpDQoNCi0qKlZhbG9yZXMgb2JzZXJ2YWRvcyoqOiBBIGxvcyB2YWxvcmVzIG9ic2VydmFkb3Mgc2UgbGVzIGRlbm9taW5hIHJlYWxpemFjaW9uZXMgZGUgbGEgdmFyaWFibGUgYWxlYXRvcmlhLg0KDQojIyBGdW5jaW9uZXMgZGUgcHJvYmFiaWxpZGFkIHkgZGUgZGlzdHJpYnVjacOzbiB7I3NlY3Rpb24tMS0yfQ0KDQoqICoqRnVuY2nDs24gZGUgbWFzYSBkZSBwcm9iYWJpbGlkYWQqKg0KRXMgdW5hIGZ1bmNpw7NuIHF1ZSBhc2lnbmEgYSBjYWRhIHBvc2libGUgdmFsb3IgZGUgdW5hIHZhcmlhYmxlICoqYWxlYXRvcmlhIGRpc2NyZXRhKiogc3UgcHJvYmFiaWxpZGFkLg0KDQoqICoqRnVuY2nDs24gZGUgZGlzdHJpYnVjacOzbiBwYXJhIHZhcmlhYmxlcyBhbGVhdG9yaWFzIGRpc2NyZXRhcyoqDQpFcyBsYSBmdW5jacOzbiBxdWUgYXNvY2lhIGEgY2FkYSB2YWxvciBkZSB1bmEgdmFyaWFibGUsIGxhIHByb2JhYmlsaWRhZCBhY3VtdWxhZGEgZGUgbG9zIHZhbG9yZXMgaW5mZXJpb3JlcyBvIGlndWFsZXMuDQoNCiogKipGdW5jacOzbiBkZSBkZW5zaWRhZCBkZSBwcm9iYWJpbGlkYWQqKg0KTGEgZnVuY2nDs24gZih4KSwgZGVmaW5pZGFkIGVuIGxvcyBuw7ptZXJvcyByZWFsZXMsIGVzIHVuYSBmdW5jacOzbiBkZSBkZW5zaWRhZCBwYXJhIHVuYSB2YXJpYWJsZSBhbGVhdG9yaWEgY29udGludWEgIlgiLCBzaSB2ZXJpZmljYToNCmYoeCkgPT4gMCBwYXJhIHRvZGEgeCDigqwgUg0KDQoNCiMgTW9tZW50b3MgZGUgdW5hIHZhcmlhYmxlIGFsZWF0b3JpYSB7I3NlY3Rpb24tMS0zfQ0KDQoNCg0KIyMgRGlhZ3JhbWEgZGUgYmFycmFzIChCYXIgY2hhcnQpIHsjc2VjdGlvbi0xLTJ9DQo=</div>
 
 
 
@@ -2372,7 +1877,7 @@ $(document).ready(function () {
 <!-- code folding -->
 <script>
 $(document).ready(function () {
-  window.initializeSourceEmbed("NotebookEjercicios.Rmd");
+  window.initializeSourceEmbed("NotebookEstadistica2.Rmd");
   window.initializeCodeFolding("show" === "show");
 });
 </script>
